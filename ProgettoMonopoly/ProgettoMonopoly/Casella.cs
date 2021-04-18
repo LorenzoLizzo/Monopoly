@@ -20,7 +20,7 @@ namespace ProgettoMonopoly
             {
                 return _nomeCasella;
             }
-            set
+            private set
             {
                 _nomeCasella = value;
             }

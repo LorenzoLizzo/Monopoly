@@ -55,6 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Banca.cs" />
+    <Compile Include="ImpresaPubblica.cs" />
+    <Compile Include="Pedina.cs" />
+    <Compile Include="Proprieta.cs" />
+    <Compile Include="Stazione.cs" />
+    <Compile Include="Tabellone.cs" />
+    <Compile Include="Terreno.cs" />
+    <Compile Include="Via.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
