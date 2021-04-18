@@ -8,10 +8,12 @@ namespace ProgettoMonopoly
     public abstract class Casella
     {
         private string _nomeCasella;
+        private uint _numeroCasella;
 
-        public Casella(string nomeCasella)
+        public Casella(string nomeCasella, uint numeroCasella)
         {
             NomeCasella = nomeCasella;
+            Numerocasella = numeroCasella;
         }
 
         public string NomeCasella
@@ -23,6 +25,18 @@ namespace ProgettoMonopoly
             private set
             {
                 _nomeCasella = value;
+            }
+        }
+
+        public uint Numerocasella
+        {
+            get
+            {
+                return _numeroCasella;
+            }
+            private set
+            {
+                _numeroCasella = value;
             }
         }
 

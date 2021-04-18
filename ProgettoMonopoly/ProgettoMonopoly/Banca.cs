@@ -5,18 +5,9 @@ using System.Text;
 
 namespace ProgettoMonopoly
 {
-    /*
-     *la banca sarà un bot che implementerò nel main window quando avrò fatto il merge di tutto il progetto
-     *to do nel main window:
-     *Metodo: per pagare indennità e premi
-     *Metodo: per comprare delle case dai giocatori
-     *Metodo: per incassare le multe e le tasse
-     *Metodo: per vendere le proprietà comprate dai giocatori e gli consegna i contratti
-     */
     public class Banca
     {
-        float denaroDellaBanca;
-        //la banca spende soldi solo comprando case dai giocatori e pagando le indennità ed i premi
+        private float _denaro;
         public Banca(float denaro)
         {
             DenaroDellaBanca = denaro;
@@ -26,12 +17,36 @@ namespace ProgettoMonopoly
         {
             get
             {
-                return denaroDellaBanca;
+                return _denaro;
             }
             set
             {
-                denaroDellaBanca = value;
+                _denaro = value;
             }
+        }
+
+        public void VendiProprietaAPedina(Proprieta proprieta, Pedina pedina)
+        {
+            pedina.DenaroPedina -= proprieta.Prezzo;
+            pedina.ListaProprieta.Add(proprieta);
+        }
+
+        public Pedina CalcolaVincitoreAsta(List<KeyValuePair<Pedina, float>> offerte)
+        {
+            Pedina pedina = offerte[0].Key;
+            float massimo = 0;
+            foreach(KeyValuePair<Pedina, float> offerta in offerte)
+            {
+                if(offerta.Value > massimo)
+                {
+                    massimo = offerta.Value;
+                    pedina = offerta.Key;
+                }
+            }
+
+            return pedina;
+
+
         }
     }
 }

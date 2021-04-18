@@ -54,7 +54,7 @@ namespace ProgettoMonopoly
             }
         }
 
-        public List<Proprieta> ProprietaCheIlGiocatorePossiede
+        public List<Proprieta> ListaProprieta
         {
             get
             {
@@ -91,8 +91,25 @@ namespace ProgettoMonopoly
 
         public void CompraProprieta(Banca banca, Proprieta proprieta)
         {
-            DenaroPedina -= proprieta.Prezzo;
-            _listaProprieta.Add(proprieta);
+            banca.VendiProprietaAPedina(proprieta, this);
+        }
+
+        public void PagaRendita(Proprieta proprieta, Pedina pedina)
+        {
+            this.DenaroPedina -= proprieta.Rendita;
+            pedina.DenaroPedina += proprieta.Rendita;
+        }
+
+        public void MiglioraProprieta()
+        {
+            foreach(Proprieta proprieta in ListaProprieta)
+            {
+                if(proprieta.Numerocasella == this.Posizione)
+                {
+                    proprieta.LivelloProprieta++;
+                    break;
+                }
+            }
         }
 
         public void Ipoteca(Proprieta proprieta)
