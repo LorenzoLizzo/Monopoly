@@ -7,6 +7,7 @@ namespace ProgettoMonopoly
 {
     public class Pedina
     {
+        private bool _pedinaInPrigione;
         private int _posizione;
         private float _denaroPedina;
         private List<Proprieta> _listaProprieta;
@@ -15,6 +16,19 @@ namespace ProgettoMonopoly
         public Pedina(float denaro)
         {
             Posizione = 0;
+            PedinaInPrigione = false;
+        }
+
+        public bool PedinaInPrigione
+        {
+            get
+            {
+                return _pedinaInPrigione;
+            }
+            set
+            {
+                _pedinaInPrigione = value;
+            }
         }
         public int Posizione
         {
@@ -96,25 +110,68 @@ namespace ProgettoMonopoly
 
         public void PagaRendita(Proprieta proprieta, Pedina pedina)
         {
-            this.DenaroPedina -= proprieta.Rendita;
-            pedina.DenaroPedina += proprieta.Rendita;
+            if(proprieta is Terreno || proprieta is Casa || proprieta is Albergo)
+            {
+                if(proprieta is Terreno)
+                {
+                    this.DenaroPedina -= (proprieta as Terreno).Rendita[(proprieta as Terreno).LivelloProprieta];
+                    pedina.DenaroPedina += (proprieta as Terreno).Rendita[(proprieta as Terreno).LivelloProprieta];
+                }
+                else if(proprieta is Casa)
+                {
+                    this.DenaroPedina -= (proprieta as Casa).Rendita[(proprieta as Casa).LivelloProprieta];
+                    pedina.DenaroPedina += (proprieta as Casa).Rendita[(proprieta as Casa).LivelloProprieta];
+                }
+                else
+                {
+                    this.DenaroPedina -= (proprieta as Albergo).Rendita[(proprieta as Albergo).LivelloProprieta];
+                    pedina.DenaroPedina += (proprieta as Albergo).Rendita[(proprieta as Albergo).LivelloProprieta];
+                }
+            }
+            else
+            {
+                this.DenaroPedina -= proprieta.Rendita[0];
+                pedina.DenaroPedina += proprieta.Rendita[0];
+            }
+            
         }
 
         public void MiglioraProprieta()
         {
             foreach(Proprieta proprieta in ListaProprieta)
             {
-                if(proprieta.Numerocasella == this.Posizione)
+                if((proprieta is Terreno || proprieta is Casa) && proprieta.Numerocasella == this.Posizione)
                 {
-                    proprieta.LivelloProprieta++;
+                    if (proprieta is Terreno)
+                    {
+                        (proprieta as Terreno).LivelloProprieta++;
+                    }
+                    else if (proprieta is Casa)
+                    {
+                        (proprieta as Casa).LivelloProprieta++;
+                    }
                     break;
                 }
+
+                
             }
         }
 
+        //da fare ipoteca e derivanti
         public void Ipoteca(Proprieta proprieta)
         {
-            
+            //da fare
         }
+
+        public CartaImprevisto Imprevisto(ref Imprevisto imprevisto)
+        {
+            return imprevisto.Pesca();
+        }
+
+        public CartaProbabilita Probabilita(ref Probabilita probabilita)
+        {
+            return probabilita.Pesca();
+        }
+
     }
 }
