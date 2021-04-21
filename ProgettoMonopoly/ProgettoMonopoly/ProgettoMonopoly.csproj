@@ -58,6 +58,10 @@
     <Compile Include="Albergo.cs" />
     <Compile Include="Banca.cs" />
     <Compile Include="Casa.cs" />
+    <Compile Include="Contratto.cs" />
+    <Compile Include="ContrattoImpresaPubblica.cs" />
+    <Compile Include="ContrattoStazione.cs" />
+    <Compile Include="ContrattoTerreno.cs" />
     <Compile Include="ImpresaPubblica.cs" />
     <Compile Include="InPrigione.cs" />
     <Compile Include="Pedina.cs" />

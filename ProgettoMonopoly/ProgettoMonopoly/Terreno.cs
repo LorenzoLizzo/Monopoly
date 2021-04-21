@@ -8,12 +8,10 @@ namespace ProgettoMonopoly
     public class Terreno : Proprieta
     {
         private int _livelloProprieta;
-        private float _valoreIpotecato;
 
-        public Terreno(uint numeroCasella, string nome, List<float> prezzo, float valoreIpotecato, List<float> rendita) : base(numeroCasella, nome, prezzo, rendita)
+        public Terreno(uint numeroCasella, string nome, List<float> prezzo, List<float> rendita) : base(numeroCasella, nome, prezzo, rendita)
         {
             LivelloProprieta = 0;
-            ValoreIpotecato = valoreIpotecato;
         }
 
         public int LivelloProprieta
@@ -28,16 +26,8 @@ namespace ProgettoMonopoly
             }
         }
 
-        public float ValoreIpotecato
-        {
-            get
-            {
-                return Prezzo[0] / 2;
-            }
-            private set
-            {
+       
 
-            }
-        }
+        
     }
 }

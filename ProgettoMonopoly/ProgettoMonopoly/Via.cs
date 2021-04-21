@@ -7,14 +7,15 @@ namespace ProgettoMonopoly
 {
     public class Via : Casella
     {
-        public Via(string nomeCasella) : base(nomeCasella)
+        private const int _valore = 400;
+        public Via(string nomeCasella, uint numeroCasella) : base(nomeCasella, numeroCasella)
         {
 
         }
 
-        public void Paga()
+        public void Paga(Pedina pedina)
         {
-
+            pedina.DenaroPedina += _valore;
         }
     }
 }

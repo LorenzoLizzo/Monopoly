@@ -79,13 +79,24 @@
         <Point X="8.25" Y="5" />
       </Path>
     </InheritanceLine>
+    <AssociationLine Name="Contratto" Type="ProgettoMonopoly.Contratto" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.5" Y="7" />
+        <Point X="6.25" Y="7" />
+        <Point X="6.25" Y="9.073" />
+        <Point X="4" Y="9.073" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAQACAAAAAAAAAAAAAAAAAAAAIAAAAAMAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAQQEAAAA=</HashCode>
       <FileName>Proprieta.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Contratto" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="ProgettoMonopoly.Banca">
-    <Position X="10.25" Y="5.25" Width="1.5" />
+    <Position X="10.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAIAAAAAAAAAAAAAAAAAAAIQAAAAAAAAA=</HashCode>
       <FileName>Banca.cs</FileName>
@@ -93,27 +104,33 @@
   </Class>
   <Class Name="ProgettoMonopoly.Via">
     <Position X="4.5" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="ProgettoMonopoly.Casella" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5" Y="3.641" />
+        <Point X="5" Y="5.75" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAACAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Via.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Terreno">
-    <Position X="5.5" Y="9.25" Width="1.5" />
+    <Position X="6.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAEAAAAIAQAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Terreno.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Stazione">
-    <Position X="7.5" Y="9.25" Width="1.5" />
+    <Position X="8.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Stazione.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.ImpresaPubblica">
-    <Position X="9.5" Y="9.25" Width="1.5" />
+    <Position X="10.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ImpresaPubblica.cs</FileName>
@@ -134,17 +151,45 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Casa">
-    <Position X="5.5" Y="12.5" Width="1.5" />
+    <Position X="6.5" Y="12.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Casa.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Albergo">
-    <Position X="5.5" Y="14.25" Width="1.5" />
+    <Position X="6.5" Y="14.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Albergo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgettoMonopoly.Contratto">
+    <Position X="2.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QEAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAIABIAAAQ=</HashCode>
+      <FileName>Contratto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgettoMonopoly.ContrattoTerreno">
+    <Position X="0.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAABAAAAAAAAAAQAABAEAAAAAAgAIAAAA=</HashCode>
+      <FileName>ContrattoTerreno.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgettoMonopoly.ContrattoStazione">
+    <Position X="2.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>ContrattoStazione.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgettoMonopoly.ContrattoImpresaPubblica">
+    <Position X="4.25" Y="12.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ContrattoImpresaPubblica.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

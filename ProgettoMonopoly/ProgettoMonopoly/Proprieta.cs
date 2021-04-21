@@ -7,38 +7,12 @@ namespace ProgettoMonopoly
 {
     public abstract class Proprieta : Casella
     {
-        private List<float> _prezzo;
         private bool _comprata;
-        private List<float> _rendita;
-        public Proprieta(uint numeroCasella, string nome, List<float> prezzo, List<float> rendita) : base(nome, numeroCasella)
+        private Contratto _contratto;
+        public Proprieta(uint numeroCasella, string nome, Contratto contratto) : base(nome, numeroCasella)
         {
-            Prezzo = prezzo;
             Comprata = false;
-            Rendita = rendita;
-        }
-
-        public List<float> Prezzo
-        {
-            get
-            {
-                return _prezzo;
-            }
-            set
-            {
-                _prezzo = value;
-            }
-        }
-
-        public List<float> Rendita
-        {
-            get
-            {
-                return _rendita;
-            }
-            set
-            {
-                _rendita = value;
-            }
+            Contratto = contratto;
         }
 
         public bool Comprata
@@ -50,6 +24,18 @@ namespace ProgettoMonopoly
             set
             {
                 _comprata = value;
+            }
+        }
+
+        public Contratto Contratto
+        {
+            get
+            {
+                return _contratto;
+            }
+            private set
+            {
+                _contratto = value;
             }
         }
 
