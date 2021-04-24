@@ -45,7 +45,6 @@ namespace ProgettoMonopoly
                 }
                
             }
-
             set
             {
                 _rendita = value;
@@ -87,11 +86,5 @@ namespace ProgettoMonopoly
                 _proprietario = value;
             }
         }
-
-
-
-
-
-
     }
 }

@@ -4,54 +4,48 @@
     <Position X="4.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAABQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Casella.cs</FileName>
+      <FileName>Classi\Caselle\Casella.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Imprevisto">
-    <Position X="7.5" Y="2.5" Width="1.5" />
+    <Position X="8" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAAACAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Imprevisto.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="ListaImprevisti" />
-    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="ProgettoMonopoly.Probabilita">
-    <Position X="7.5" Y="0.5" Width="1.5" />
+    <Position X="8" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAIAAAAAAAAAAAACAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Probabilita.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="ListaProbabilita" />
-    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="ProgettoMonopoly.CartaImprevisto">
-    <Position X="10.5" Y="2.5" Width="1.5" />
+    <Position X="13.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>CartaImprevisto.cs</FileName>
+      <FileName>Classi\Carte imprevisto e probabilita\CartaImprevisto.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.CartaProbabilita">
-    <Position X="10.5" Y="1" Width="1.5" />
+    <Position X="13.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>CartaProbabilita.cs</FileName>
+      <FileName>Classi\Carte imprevisto e probabilita\CartaProbabilita.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Carta">
-    <Position X="12.75" Y="1" Width="1.5" />
+    <Position X="16" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABACIAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAIAEAAAA=</HashCode>
-      <FileName>Carta.cs</FileName>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Classi\Carte imprevisto e probabilita\Carta.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Tabellone">
     <Position X="0.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAABAAAAQAAAAAAABAAEAAAAAAAABAQ=</HashCode>
+      <HashCode>AAAgAAAAAABAAIAAAAAAQACAAAAABQAEAABAAAAABAQ=</HashCode>
       <FileName>Tabellone.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -62,7 +56,7 @@
   <Class Name="ProgettoMonopoly.Pedina">
     <Position X="2.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACQCAEAAgAAAAAAAEAAAAADAAAAAAAQogYIIACAAgA=</HashCode>
+      <HashCode>BACQKAEAAgAAAAAAAEAAAABDAAAAAAAQoAYIIAGAAgA=</HashCode>
       <FileName>Pedina.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -70,26 +64,26 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="ProgettoMonopoly.Proprieta">
-    <Position X="7.5" Y="5" Width="1.5" />
+    <Position X="7.5" Y="5.25" Width="1.5" />
     <InheritanceLine Type="ProgettoMonopoly.Casella" FixedFromPoint="true">
       <Path>
         <Point X="5.688" Y="3.642" />
-        <Point X="5.688" Y="4.7" />
-        <Point X="8.25" Y="4.7" />
-        <Point X="8.25" Y="5" />
+        <Point X="5.688" Y="4.875" />
+        <Point X="8.25" Y="4.875" />
+        <Point X="8.25" Y="5.25" />
       </Path>
     </InheritanceLine>
     <AssociationLine Name="Contratto" Type="ProgettoMonopoly.Contratto" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.5" Y="7" />
-        <Point X="6.25" Y="7" />
-        <Point X="6.25" Y="9.073" />
-        <Point X="4" Y="9.073" />
+        <Point X="7.5" Y="7.58" />
+        <Point X="6.25" Y="7.58" />
+        <Point X="6.25" Y="9.823" />
+        <Point X="4" Y="9.823" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAQQEAAAA=</HashCode>
-      <FileName>Proprieta.cs</FileName>
+      <HashCode>AAAAAAAAACACAAAAAAAAAAAAAAAAAAAAAAAAQQEAAAA=</HashCode>
+      <FileName>Classi\Caselle\Proprieta.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Contratto" />
@@ -98,7 +92,7 @@
   <Class Name="ProgettoMonopoly.Banca">
     <Position X="10.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAIAAAAAAAAAAAAAAAAAAAIQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAAAABAAIAAAAAAAAAAAAAAAAAAAIQAAAAAAAAA=</HashCode>
       <FileName>Banca.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -112,13 +106,13 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAACAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Via.cs</FileName>
+      <FileName>Classi\Caselle\Via.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Terreno">
     <Position X="6.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Terreno.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -137,17 +131,17 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Prigione">
-    <Position X="13" Y="5" Width="1.5" />
+    <Position X="13" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAEAgCgAAAAAACAAABAAAAAAAAAAAAAAI=</HashCode>
-      <FileName>Prigione.cs</FileName>
+      <FileName>Classi\Caselle\Prigione.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.InPrigione">
-    <Position X="15.25" Y="5" Width="1.5" />
+    <Position X="15.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>InPrigione.cs</FileName>
+      <FileName>Classi\Caselle\InPrigione.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Casa">
@@ -165,31 +159,58 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Contratto">
-    <Position X="2.5" Y="8.75" Width="1.5" />
+    <Position X="2.5" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QEAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAIABIAAAQ=</HashCode>
-      <FileName>Contratto.cs</FileName>
+      <FileName>Classi\Contratti\Contratto.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.ContrattoTerreno">
-    <Position X="0.5" Y="12.25" Width="1.5" />
+    <Position X="0.5" Y="13.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAACAAAAABAAAAAAAAAAQAABAEAAAAAAgAIAAAA=</HashCode>
-      <FileName>ContrattoTerreno.cs</FileName>
+      <FileName>Classi\Contratti\ContrattoTerreno.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.ContrattoStazione">
-    <Position X="2.5" Y="12.25" Width="1.5" />
+    <Position X="2.5" Y="13.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
-      <FileName>ContrattoStazione.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Classi\Contratti\ContrattoStazione.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.ContrattoImpresaPubblica">
-    <Position X="4.25" Y="12.25" Width="2" />
+    <Position X="4.25" Y="13.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ContrattoImpresaPubblica.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Classi\Contratti\ContrattoImpresaPubblica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgettoMonopoly.MazzoProbabilita">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAIAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classi\Carte imprevisto e probabilita\MazzoProbabilita.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ListaProbabilita" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ProgettoMonopoly.MazzoImprevisti">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Classi\Carte imprevisto e probabilita\MazzoImprevisti.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ListaImprevisti" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ProgettoMonopoly.Gioco">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAIAAAABAAAAQAAAABAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Gioco.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -7,31 +7,17 @@ namespace ProgettoMonopoly
 {
     public class Probabilita : Casella
     {
-        private List<CartaProbabilita> _listaProbabilita;
-
-        public Probabilita(string nomeCasella, List<CartaProbabilita> listaProbabilita) : base(nomeCasella)
+        public Probabilita(string nomeCasella, uint numeroCasella) : base(nomeCasella, numeroCasella)
         {
-            ListaProbabilita = listaProbabilita;
+            
         }
 
-        public List<CartaProbabilita> ListaProbabilita
+        public CartaProbabilita Pesca(ref MazzoProbabilita mazzo)
         {
-            get
-            {
-                return _listaProbabilita;
-            }
-            private set
-            {
-                _listaProbabilita = value;
-            }
-        }
+            CartaProbabilita cartaPescata = mazzo.ListaProbabilita[0];
 
-        public CartaProbabilita Pesca()
-        {
-            CartaProbabilita cartaPescata = ListaProbabilita[0];
-
-            ListaProbabilita.RemoveAt(0);
-            ListaProbabilita.Add(cartaPescata);
+            mazzo.ListaProbabilita.RemoveAt(0);
+            mazzo.ListaProbabilita.Add(cartaPescata);
 
             return cartaPescata;
         }

@@ -42,7 +42,7 @@ namespace ProgettoMonopoly
 
         public void EntraInPrigione(Pedina pedina)
         {
-            if (!pedina.PedinaInPrigione && pedina.Posizione == this.Numerocasella)
+            if (!pedina.PedinaInPrigione && pedina.Posizione == this)
             {
                 pedina.PedinaInPrigione = true;
                 PedineInPrigione.Add(pedina);

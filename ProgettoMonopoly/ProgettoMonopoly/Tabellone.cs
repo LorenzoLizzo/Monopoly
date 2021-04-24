@@ -2,56 +2,91 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections.ObjectModel;
 
 namespace ProgettoMonopoly
 {
     public class Tabellone
     {
         private Dictionary<int,Casella> _listaCaselle;
-        private List<Pedina> _listaPedine;
+        private ObservableCollection<Pedina> _listaPedine;
+        private MazzoImprevisti _mazzoImprevisti;
+        private MazzoProbabilita _mazzoProbabilita;
+        private Dictionary<int, int> _listaBanconote; //chiave tipo banconata es:500 valore numero di quelle banconote es:2
 
-        public Tabellone(Dictionary<int, Casella> listaCaselle, List<Pedina> listaPedine)
+        public Tabellone(Dictionary<int, Casella> listaCaselle, ObservableCollection<Pedina> listaPedine, MazzoImprevisti mazzoImprevisti,
+            MazzoProbabilita mazzoProbabilita, Dictionary<int, int> listaBanconote)
         {
             ListaCaselle = listaCaselle;
             ListaPedine = listaPedine;
+            MazzoImprevisti = mazzoImprevisti;
+            MazzoProbabilita = mazzoProbabilita;
+            ListaBanconote = listaBanconote;
         }
 
-        public Dictionary<int, Casella> ListaCaselle
+        public Tabellone()
+        {
+
+        }
+
+        private Dictionary<int, Casella> ListaCaselle
         {
             get
             {
                 return _listaCaselle;
             }
-            private set
+            set
             {
                 _listaCaselle = value;
             }
         }
 
-        public List<Pedina> ListaPedine
+        private ObservableCollection<Pedina> ListaPedine
         {
             get
             {
                 return _listaPedine;
             }
-            private set
+            set
             {
                 _listaPedine = value;
             }
         }
 
-        public List<Proprieta> TrovaListaProprieta()
+        public MazzoImprevisti MazzoImprevisti
         {
-            List<Proprieta> listaProprieta = new List<Proprieta>();
-            for (int i = 1; i < ListaCaselle.Count; i++)
+            get
             {
-                Casella casella = GetCasella(i);
-                if (casella is Proprieta)
-                {
-                    listaProprieta.Add(casella as Proprieta);
-                }
+                return _mazzoImprevisti;
             }
-            return listaProprieta;
+            private set
+            {
+                _mazzoImprevisti = value;
+            }
+        }
+
+        public MazzoProbabilita MazzoProbabilita
+        {
+            get
+            {
+                return _mazzoProbabilita;
+            }
+            private set
+            {
+                _mazzoProbabilita = value;
+            }
+        }
+
+        private Dictionary<int, int> ListaBanconote
+        {
+            get
+            {
+                return _listaBanconote;
+            }
+            set
+            {
+                _listaBanconote = value;
+            }
         }
 
         public Casella GetCasella(int indice)

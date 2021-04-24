@@ -9,8 +9,10 @@ namespace ProgettoMonopoly
     {
         private bool _comprata;
         private Contratto _contratto;
+        private int _livelloProprieta;
         public Proprieta(uint numeroCasella, string nome, Contratto contratto) : base(nome, numeroCasella)
         {
+            LivelloProprieta = 0;
             Comprata = false;
             Contratto = contratto;
         }
@@ -39,6 +41,18 @@ namespace ProgettoMonopoly
             }
         }
 
-        
+        public int LivelloProprieta
+        {
+            get
+            {
+                return _livelloProprieta;
+            }
+            set
+            {
+                _livelloProprieta = value;
+            }
+        }
+
+
     }
 }

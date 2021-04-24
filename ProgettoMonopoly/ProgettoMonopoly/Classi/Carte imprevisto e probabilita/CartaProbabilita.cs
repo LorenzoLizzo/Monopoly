@@ -7,7 +7,7 @@ namespace ProgettoMonopoly
 {
     public class CartaProbabilita : Carta
     {
-        public CartaProbabilita(uint id, string nome, string descrizione) : base(id, nome, descrizione)
+        public CartaProbabilita(string descrizione) : base(descrizione)
         {
 
         }

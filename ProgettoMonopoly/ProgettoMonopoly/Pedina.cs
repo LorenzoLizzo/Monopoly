@@ -7,16 +7,65 @@ namespace ProgettoMonopoly
 {
     public class Pedina
     {
-        private bool _pedinaInPrigione;
-        private int _posizione;
-        private float _denaroPedina;
+        private string _nome;
+        private string _percorsoImmagine;
         private List<Proprieta> _listaProprieta;
+        private Casella _posizione;
+        private bool _pedinaInPrigione;
+        private float _denaroPedina;
         private List<Proprieta> _listaProprietaIpotecate;
 
         public Pedina(float denaro)
         {
-            Posizione = 0;
             PedinaInPrigione = false;
+        }
+
+        public string Nome
+        {
+            get
+            {
+                return _nome;
+            }
+            set
+            {
+                _nome = value;
+            }
+        }
+
+        public string PercorsoImmagine
+        {
+            get
+            {
+                return _percorsoImmagine;
+            }
+            set
+            {
+                _percorsoImmagine = value;
+            }
+        }
+
+        public List<Proprieta> ListaProprieta
+        {
+            get
+            {
+                return _listaProprieta;
+            }
+            set
+            {
+                _listaProprieta = value;
+            }
+        }
+
+        public Casella Posizione
+        {
+            get
+            {
+                return _posizione;
+            }
+            set
+            {
+                _posizione = value;
+            }
         }
 
         public bool PedinaInPrigione
@@ -30,18 +79,7 @@ namespace ProgettoMonopoly
                 _pedinaInPrigione = value;
             }
         }
-        public int Posizione
-        {
-            get
-            {
-                return _posizione;
-            }
-            set
-            {
-                _posizione = value;
-            }
-        }
-
+        
         public float DenaroPedina
         {
             get
@@ -68,18 +106,6 @@ namespace ProgettoMonopoly
             }
         }
 
-        public List<Proprieta> ListaProprieta
-        {
-            get
-            {
-                return _listaProprieta;
-            }
-            set
-            {
-                _listaProprieta = value;
-            }
-        }
-
         public bool Fallisci()
         {
             if (DenaroPedina < 0)
@@ -91,16 +117,6 @@ namespace ProgettoMonopoly
                 return false;
             }
                 
-        }
-
-        public int Giocata(int dado1, int dado2)
-        {
-            Posizione += dado1 + dado2;
-            if(Posizione > 40)
-            {
-                Posizione -= 40;
-            }
-            return Posizione;
         }
 
         public void CompraProprieta(Banca banca, Proprieta proprieta)

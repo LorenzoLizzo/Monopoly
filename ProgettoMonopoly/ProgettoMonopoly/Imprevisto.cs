@@ -7,31 +7,17 @@ namespace ProgettoMonopoly
 {
     public class Imprevisto : Casella
     {
-        private List<CartaImprevisto> _listaImprevisti;
-
-        public Imprevisto(string nomeCasella, List<CartaImprevisto> listaImprevisti):base(nomeCasella)
+        public Imprevisto(string nomeCasella, uint numeroCasella) : base(nomeCasella, numeroCasella)
         {
-            ListaImprevisti = listaImprevisti;
+
         }
 
-        public List<CartaImprevisto> ListaImprevisti
+        public CartaImprevisto Pesca(ref MazzoImprevisti mazzo)
         {
-            get
-            {
-                return _listaImprevisti;
-            }
-            private set
-            {
-                _listaImprevisti = value;
-            }
-        }
+            CartaImprevisto cartaPescata = mazzo.ListaImprevisti[0];
 
-        public CartaImprevisto Pesca()
-        {
-            CartaImprevisto cartaPescata = ListaImprevisti[0];
-
-            ListaImprevisti.RemoveAt(0);
-            ListaImprevisti.Add(cartaPescata);
+            mazzo.ListaImprevisti.RemoveAt(0);
+            mazzo.ListaImprevisti.Add(cartaPescata);
             
             return cartaPescata;
         }

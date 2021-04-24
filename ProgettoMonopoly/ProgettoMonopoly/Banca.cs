@@ -25,6 +25,11 @@ namespace ProgettoMonopoly
             }
         }
 
+        public void DistribuisciDenaro()
+        {
+
+        }
+
         public void VendiProprietaAPedina(Proprieta proprieta, Pedina pedina)
         {
             pedina.DenaroPedina -= proprieta.Prezzo;

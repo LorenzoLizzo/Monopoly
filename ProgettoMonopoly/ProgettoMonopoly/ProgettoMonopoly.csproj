@@ -58,19 +58,22 @@
     <Compile Include="Albergo.cs" />
     <Compile Include="Banca.cs" />
     <Compile Include="Casa.cs" />
-    <Compile Include="Contratto.cs" />
-    <Compile Include="ContrattoImpresaPubblica.cs" />
-    <Compile Include="ContrattoStazione.cs" />
-    <Compile Include="ContrattoTerreno.cs" />
+    <Compile Include="Classi\Contratti\Contratto.cs" />
+    <Compile Include="Classi\Contratti\ContrattoImpresaPubblica.cs" />
+    <Compile Include="Classi\Contratti\ContrattoStazione.cs" />
+    <Compile Include="Classi\Contratti\ContrattoTerreno.cs" />
+    <Compile Include="Gioco.cs" />
     <Compile Include="ImpresaPubblica.cs" />
-    <Compile Include="InPrigione.cs" />
+    <Compile Include="Classi\Caselle\InPrigione.cs" />
+    <Compile Include="Classi\Carte imprevisto e probabilita\MazzoImprevisti.cs" />
+    <Compile Include="Classi\Carte imprevisto e probabilita\MazzoProbabilita.cs" />
     <Compile Include="Pedina.cs" />
-    <Compile Include="Prigione.cs" />
-    <Compile Include="Proprieta.cs" />
+    <Compile Include="Classi\Caselle\Prigione.cs" />
+    <Compile Include="Classi\Caselle\Proprieta.cs" />
     <Compile Include="Stazione.cs" />
     <Compile Include="Tabellone.cs" />
     <Compile Include="Terreno.cs" />
-    <Compile Include="Via.cs" />
+    <Compile Include="Classi\Caselle\Via.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -79,10 +82,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Carta.cs" />
-    <Compile Include="CartaImprevisto.cs" />
-    <Compile Include="CartaProbabilita.cs" />
-    <Compile Include="Casella.cs" />
+    <Compile Include="Classi\Carte imprevisto e probabilita\Carta.cs" />
+    <Compile Include="Classi\Carte imprevisto e probabilita\CartaImprevisto.cs" />
+    <Compile Include="Classi\Carte imprevisto e probabilita\CartaProbabilita.cs" />
+    <Compile Include="Classi\Caselle\Casella.cs" />
     <Compile Include="Imprevisto.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -117,5 +120,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
