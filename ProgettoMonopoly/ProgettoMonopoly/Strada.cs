@@ -5,7 +5,15 @@ using System.Text;
 
 namespace ProgettoMonopoly
 {
-    public class Albergo : Casa
+    public class Strada : Proprieta
     {
+        
+        public Strada()
+        {
+
+        }
+
+        
+
     }
 }

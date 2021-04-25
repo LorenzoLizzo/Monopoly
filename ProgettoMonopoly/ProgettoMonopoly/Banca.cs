@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 
 namespace ProgettoMonopoly
 {
-    public class Banca : Pedina
+    public class Banca
     {
         private float _denaro;
         private ObservableCollection<Proprieta> _listaProprieta;
@@ -44,28 +44,29 @@ namespace ProgettoMonopoly
             pedina.DenaroPedina = 1500;
         }
 
-        public void VendiProprietaAPedina(Proprieta proprieta, Pedina pedina)
+        public void VendiProprietaAPedina(Pedina pedina)
         {
-            pedina.DenaroPedina -= proprieta.Prezzo;
-            pedina.ListaProprieta.Add(proprieta);
-        }
-
-        public Pedina CalcolaVincitoreAsta(List<KeyValuePair<Pedina, float>> offerte)
-        {
-            Pedina pedina = offerte[0].Key;
-            float massimo = 0;
-            foreach(KeyValuePair<Pedina, float> offerta in offerte)
+            if(ListaProprietaBanca.Contains(pedina.Posizione as Proprieta))
             {
-                if(offerta.Value > massimo)
-                {
-                    massimo = offerta.Value;
-                    pedina = offerta.Key;
-                }
+                pedina.DenaroPedina -= (pedina.Posizione as Proprieta).Contratto.ValoreContratto;
+                DenaroBanca += (pedina.Posizione as Proprieta).Contratto.ValoreContratto;
+                ListaProprietaBanca.Remove(pedina.Posizione as Proprieta);
+                pedina.ListaProprieta.Add(pedina.Posizione as Proprieta);
             }
-
-            return pedina;
-
-
+            else
+            {
+                throw new Exception();
+            }
+           
         }
+
+        public void VendiProprietaAVincitoreAsta(Asta asta)
+        {
+            asta.Vincitore.DenaroPedina -= asta.PuntataAttuale;
+            DenaroBanca += asta.PuntataAttuale;
+            ListaProprietaBanca.Remove(asta.ProprietaAllAsta);
+            asta.Vincitore.ListaProprieta.Add(asta.ProprietaAllAsta);
+        }
+
     }
 }

@@ -119,11 +119,6 @@ namespace ProgettoMonopoly
                 
         }
 
-        public void CompraProprieta(Banca banca, Proprieta proprieta)
-        {
-            banca.VendiProprietaAPedina(proprieta, this);
-        }
-
         public void PagaRendita(Proprieta proprieta, Pedina pedina)
         {
             if(proprieta is Terreno || proprieta is Casa || proprieta is Albergo)

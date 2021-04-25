@@ -45,7 +45,7 @@
   <Class Name="ProgettoMonopoly.Tabellone">
     <Position X="0.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgAAAAAABAAIAAAAAAQACAAAAABQAEAABAAAAABAQ=</HashCode>
+      <HashCode>AAAgAAAAAABAAIAAAAACQACAAAAABQAEAABAAAAABAQ=</HashCode>
       <FileName>Tabellone.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -56,12 +56,13 @@
   <Class Name="ProgettoMonopoly.Pedina">
     <Position X="2.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BACQKAEAAgAAAAAAAEAAAABDAAAAAAAQoAYIIAGAAgA=</HashCode>
+      <HashCode>BACQKAEAAAAAAAAAgEAAAABDAAAAAAAQoAYIIAGAAgA=</HashCode>
       <FileName>Pedina.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="ListaProprieta" />
     </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ProgettoMonopoly.Proprieta">
     <Position X="7.5" Y="5.25" Width="1.5" />
@@ -76,8 +77,8 @@
     <AssociationLine Name="Contratto" Type="ProgettoMonopoly.Contratto" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="7.5" Y="7.58" />
-        <Point X="6.25" Y="7.58" />
-        <Point X="6.25" Y="9.823" />
+        <Point X="6.5" Y="7.58" />
+        <Point X="6.5" Y="9.823" />
         <Point X="4" Y="9.823" />
       </Path>
     </AssociationLine>
@@ -92,7 +93,7 @@
   <Class Name="ProgettoMonopoly.Banca">
     <Position X="10.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAAABAAIAAAAAAAAAAAAAAAAAAAIQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAIAAAAAgAAAAAoAAAAACAABA=</HashCode>
       <FileName>Banca.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -107,13 +108,6 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAACAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classi\Caselle\Via.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ProgettoMonopoly.Terreno">
-    <Position X="6.5" Y="9.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Terreno.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Stazione">
@@ -142,20 +136,6 @@
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classi\Caselle\InPrigione.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ProgettoMonopoly.Casa">
-    <Position X="6.5" Y="11.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Casa.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ProgettoMonopoly.Albergo">
-    <Position X="6.5" Y="13" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Albergo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Contratto">
@@ -209,8 +189,36 @@
   <Class Name="ProgettoMonopoly.Gioco">
     <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAAIAAACBAAAAQAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <HashCode>AAAAAAAACiIAAQCRAAAAQBAAAAAAiggAAAAAAAAABAA=</HashCode>
       <FileName>Gioco.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgettoMonopoly.Turno">
+    <Position X="11.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAABAAAAAAAAIAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Turno.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgettoMonopoly.Distretto">
+    <Position X="6.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAABAAAAEAAAgAAAAAA=</HashCode>
+      <FileName>Distretto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgettoMonopoly.Strada">
+    <Position X="6.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Strada.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgettoMonopoly.Asta">
+    <Position X="9" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgEAAAAEAAABAAAAAAAABEAAAEACAAAAAIAAAAA=</HashCode>
+      <FileName>Asta.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

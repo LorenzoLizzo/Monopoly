@@ -55,13 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Albergo.cs" />
+    <Compile Include="Asta.cs" />
     <Compile Include="Banca.cs" />
-    <Compile Include="Casa.cs" />
     <Compile Include="Classi\Contratti\Contratto.cs" />
     <Compile Include="Classi\Contratti\ContrattoImpresaPubblica.cs" />
     <Compile Include="Classi\Contratti\ContrattoStazione.cs" />
     <Compile Include="Classi\Contratti\ContrattoTerreno.cs" />
+    <Compile Include="Distretto.cs" />
     <Compile Include="Gioco.cs" />
     <Compile Include="ImpresaPubblica.cs" />
     <Compile Include="Classi\Caselle\InPrigione.cs" />
@@ -71,9 +71,10 @@
     <Compile Include="Classi\Caselle\Prigione.cs" />
     <Compile Include="Classi\Caselle\Proprieta.cs" />
     <Compile Include="Stazione.cs" />
+    <Compile Include="Strada.cs" />
     <Compile Include="Tabellone.cs" />
-    <Compile Include="Terreno.cs" />
     <Compile Include="Classi\Caselle\Via.cs" />
+    <Compile Include="Turno.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
