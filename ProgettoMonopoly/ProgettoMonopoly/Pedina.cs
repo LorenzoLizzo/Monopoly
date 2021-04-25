@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProgettoMonopoly
 {
-    public class Pedina
+    public class Pedina : IEquatable<Pedina>
     {
         private string _nome;
         private string _percorsoImmagine;
@@ -189,5 +189,13 @@ namespace ProgettoMonopoly
             return probabilita.Pesca();
         }
 
+        public bool Equals(Pedina other)
+        {
+            if(this.Nome == other.Nome)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

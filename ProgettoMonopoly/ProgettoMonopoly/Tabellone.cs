@@ -92,10 +92,27 @@ namespace ProgettoMonopoly
         public Casella GetCasella(int indice)
         {
             Casella casella;
+
+            if (indice > 40)
+            {
+                indice -= 40;
+            }
+
             ListaCaselle.TryGetValue(indice, out casella);
             return casella;
         }
 
+        public Prigione GetPrigione()
+        {
+            foreach (KeyValuePair<int,Casella> casella in ListaCaselle)
+            {
+                if(casella.Value is Prigione)
+                {
+                    return casella.Value as Prigione;
+                }
+            }
+            throw new Exception();
+        }
 
     }
 }

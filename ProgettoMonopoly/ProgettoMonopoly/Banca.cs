@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections.ObjectModel;
 
 namespace ProgettoMonopoly
 {
-    public class Banca
+    public class Banca : Pedina
     {
         private float _denaro;
-        public Banca(float denaro)
+        private ObservableCollection<Proprieta> _listaProprieta;
+        public Banca()
         {
-            DenaroDellaBanca = denaro;
+            
         }
 
-        public float DenaroDellaBanca
+        public float DenaroBanca
         {
             get
             {
@@ -25,9 +27,21 @@ namespace ProgettoMonopoly
             }
         }
 
-        public void DistribuisciDenaro()
+        public ObservableCollection<Proprieta> ListaProprietaBanca
         {
+            get
+            {
+                return _listaProprieta;
+            }
+            set
+            {
+                _listaProprieta = value;
+            }
+        }
 
+        public void DistribuisciDenaroIniziale(Pedina pedina)
+        {
+            pedina.DenaroPedina = 1500;
         }
 
         public void VendiProprietaAPedina(Proprieta proprieta, Pedina pedina)

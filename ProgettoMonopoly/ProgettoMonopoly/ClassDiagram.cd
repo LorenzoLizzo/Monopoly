@@ -145,14 +145,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Casa">
-    <Position X="6.5" Y="12.5" Width="1.5" />
+    <Position X="6.5" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Casa.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Albergo">
-    <Position X="6.5" Y="14.25" Width="1.5" />
+    <Position X="6.5" Y="13" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Albergo.cs</FileName>
@@ -209,7 +209,7 @@
   <Class Name="ProgettoMonopoly.Gioco">
     <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAAIAAAABAAAAQAAAABAAAAAAAAAAAAAABAA=</HashCode>
+      <HashCode>QAAAAAAAAAIAAACBAAAAQAAAAAAAAAAAAAAAAAAABAA=</HashCode>
       <FileName>Gioco.cs</FileName>
     </TypeIdentifier>
   </Class>
