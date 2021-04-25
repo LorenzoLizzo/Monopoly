@@ -12,19 +12,7 @@ namespace ProgettoMonopoly
 
         }
 
-        public override List<float> Rendita
-        {
-            get
-            {
-                return _rendita;
-
-            }
-            set
-            {
-                _rendita = value;
-            }
-        }
-
+        
 
     }
 }

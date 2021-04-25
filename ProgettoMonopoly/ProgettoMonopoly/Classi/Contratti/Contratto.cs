@@ -9,13 +9,25 @@ namespace ProgettoMonopoly
     {
         private string _nomeContratto;
         private float _valoreContratto;
-        protected List<float> _rendita;
+        private List<int> _rendita;
 
-        public Contratto(string nomeContratto, float valoreContratto, List<float> rendita)
+        public Contratto(string nomeContratto, float valoreContratto, List<int> rendita)
         {
             NomeContratto = nomeContratto;
             ValoreContratto = valoreContratto;
             Rendita = rendita;
+        }
+
+        public List<int> Rendita
+        {
+            get
+            {
+                return _rendita;
+            }
+            private set
+            {
+                _rendita = value;
+            }
         }
 
         public string NomeContratto
@@ -54,7 +66,7 @@ namespace ProgettoMonopoly
             }
         }
 
-        public abstract List<float> Rendita { get; set; }
+        
 
 
 

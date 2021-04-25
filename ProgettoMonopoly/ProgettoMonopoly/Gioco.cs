@@ -148,6 +148,14 @@ namespace ProgettoMonopoly
             return asta;
         }
 
+        public void PagaAffitto()
+        {
+            int affitto = (TurnoAttuale.Pedina.Posizione as Proprieta).Contratto.Rendita[(TurnoAttuale.Pedina.Posizione as Proprieta).LivelloProprieta];
+            TurnoAttuale.Pedina.DenaroPedina -= affitto;
+            (TurnoAttuale.Pedina.Posizione as Proprieta).Proprietario.DenaroPedina += affitto;
+            CambiaTurno();
+        }
+
         public void CambiaTurno()
         {
             ListaTurni.Enqueue(TurnoAttuale);

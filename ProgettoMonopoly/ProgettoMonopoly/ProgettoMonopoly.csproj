@@ -60,7 +60,7 @@
     <Compile Include="Classi\Contratti\Contratto.cs" />
     <Compile Include="Classi\Contratti\ContrattoImpresaPubblica.cs" />
     <Compile Include="Classi\Contratti\ContrattoStazione.cs" />
-    <Compile Include="Classi\Contratti\ContrattoTerreno.cs" />
+    <Compile Include="Classi\Contratti\ContrattoStrada.cs" />
     <Compile Include="Distretto.cs" />
     <Compile Include="Gioco.cs" />
     <Compile Include="ImpresaPubblica.cs" />
