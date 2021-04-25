@@ -189,7 +189,7 @@
   <Class Name="ProgettoMonopoly.Gioco">
     <Position X="21" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAACiIAAQCRAAAAQBAAAAAAiggAAAAAAAAAJAA=</HashCode>
+      <HashCode>AAAAAAAACiIAAQCRAAAAQBAIAAAAiggAAAAAAACEJAA=</HashCode>
       <FileName>Gioco.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -201,7 +201,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Distretto">
-    <Position X="6.75" Y="13.5" Width="1.5" />
+    <Position X="6.75" Y="14.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAABAAAAEAAAgAAAAAA=</HashCode>
       <FileName>Distretto.cs</FileName>
@@ -210,7 +210,7 @@
   <Class Name="ProgettoMonopoly.Strada">
     <Position X="6.75" Y="12" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Strada.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -219,6 +219,20 @@
     <TypeIdentifier>
       <HashCode>AAAAAgEAAAAEAAABAAAAAAAABEAAAEACAAAAAIAAAAA=</HashCode>
       <FileName>Asta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgettoMonopoly.Tassa">
+    <Position X="9" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tassa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgettoMonopoly.Parcheggio">
+    <Position X="11" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parcheggio.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

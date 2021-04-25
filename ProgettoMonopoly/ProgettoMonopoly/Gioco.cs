@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace ProgettoMonopoly
 {
     public class Gioco
     {
+        private const int _passaggioDalVia = 200;
         private Tabellone _tabellone;
         private List<Pedina> _listaPedine;
         private Banca _banca;
@@ -113,6 +115,11 @@ namespace ProgettoMonopoly
 
                     TurnoAttuale.Pedina.Posizione = Tabellone.GetCasella(posizioneAttualePedina + somma);
 
+                    if(TurnoAttuale.Pedina.Posizione.Numerocasella < posizioneAttualePedina)
+                    {
+                        Banca.PagaPassaggioDalVia(TurnoAttuale.Pedina, _passaggioDalVia);
+                    }
+
                     if (dado1 != dado2)
                     {
                         TurnoAttuale.NumeroVolteDoppiDadi = 0;
@@ -161,5 +168,54 @@ namespace ProgettoMonopoly
             ListaTurni.Enqueue(TurnoAttuale);
             ListaTurni.Dequeue();
         }
+
+        public async void MiglioraProprieta(Proprieta proprieta) // solo strada
+        {
+            await Task.Run(() =>
+            {
+                if (proprieta.LivelloProprieta == 0)
+                {
+                    if (proprieta is Strada)
+                    {
+                        int i = 0;
+                        foreach (Proprieta prop in (proprieta as Strada).Distretto.ListaStrade)
+                        {
+                            if (proprieta.Proprietario.ListaProprieta.Contains(prop))
+                            {
+                                i++;
+                            }
+                        }
+
+                        if (i == (proprieta as Strada).Distretto.ListaStrade.Count)
+                        {
+                            proprieta.LivelloProprieta++; //migliora anche livello delle altre due proprietà
+                        }
+                        else
+                        {
+                            throw new Exception();
+                        }
+                    }
+
+                }
+                else if (proprieta.LivelloProprieta > 0 && proprieta.LivelloProprieta < proprieta.Contratto.Rendita.Count) // e le altre due porprietà sono al tuo stesso livello o al massimo uno sotto
+                {
+                    proprieta.Proprietario.DenaroPedina -= (proprieta.Contratto as ContrattoStrada).CostoPerCasa;
+                    Banca.DenaroBanca += (proprieta.Contratto as ContrattoStrada).CostoPerCasa;
+                    proprieta.LivelloProprieta++;
+                }
+            });
+
+            
+        }
+
+        public void PagaTassa()
+        {
+            TurnoAttuale.Pedina.DenaroPedina -= (TurnoAttuale.Pedina.Posizione as Tassa).Costo;
+            Banca.DenaroBanca += (TurnoAttuale.Pedina.Posizione as Tassa).Costo;
+        }
+
+        
+
+        
     }
 }

@@ -7,8 +7,8 @@ namespace ProgettoMonopoly
 {
     public class ContrattoStrada : Contratto
     {
-        private string _colore;
-        private float _costoPerCasa;
+        private string _colore; //togli???
+        private int _costoPerCasa;
         
         public ContrattoStrada(string nomeContratto, float valoreContratto, List<float> rendita, string colore): base(nomeContratto, valoreContratto, rendita)
         {
@@ -25,9 +25,9 @@ namespace ProgettoMonopoly
             {
                 _colore = value;
             }
-        }
+        } //togli???
 
-        public float CostoPerCasa
+        public int CostoPerCasa
         {
             get
             {

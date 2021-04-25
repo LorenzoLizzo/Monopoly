@@ -5,25 +5,24 @@ using System.Text;
 
 namespace ProgettoMonopoly
 {
-    public class Strada : Proprieta
+    public class Tassa : Casella
     {
-        private Distretto _distretto;
-        public Strada()
+        private int _costo;
+        public Tassa() : base()
         {
 
         }
 
-        public Distretto Distretto
+        public int Costo
         {
             get
             {
-                return _distretto;
+                return _costo;
             }
-            set
+            private set
             {
-                _distretto = value;
+                _costo = value;
             }
         }
-
     }
 }

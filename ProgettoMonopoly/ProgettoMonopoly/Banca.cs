@@ -68,5 +68,11 @@ namespace ProgettoMonopoly
             asta.Vincitore.ListaProprieta.Add(asta.ProprietaAllAsta);
         }
 
+        public void PagaPassaggioDalVia(Pedina pedina, int pagamento)
+        {
+            DenaroBanca -= pagamento;
+            pedina.DenaroPedina += pagamento;
+        }
+
     }
 }

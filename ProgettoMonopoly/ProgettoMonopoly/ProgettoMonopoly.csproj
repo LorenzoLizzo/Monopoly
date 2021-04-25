@@ -67,6 +67,7 @@
     <Compile Include="Classi\Caselle\InPrigione.cs" />
     <Compile Include="Classi\Carte imprevisto e probabilita\MazzoImprevisti.cs" />
     <Compile Include="Classi\Carte imprevisto e probabilita\MazzoProbabilita.cs" />
+    <Compile Include="Parcheggio.cs" />
     <Compile Include="Pedina.cs" />
     <Compile Include="Classi\Caselle\Prigione.cs" />
     <Compile Include="Classi\Caselle\Proprieta.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Strada.cs" />
     <Compile Include="Tabellone.cs" />
     <Compile Include="Classi\Caselle\Via.cs" />
+    <Compile Include="Tassa.cs" />
     <Compile Include="Turno.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
