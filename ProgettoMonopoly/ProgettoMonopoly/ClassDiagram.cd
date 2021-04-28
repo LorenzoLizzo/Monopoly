@@ -3,7 +3,7 @@
   <Class Name="ProgettoMonopoly.Casella">
     <Position X="4.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAAAABQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AIAAAABQIAAAAAAAABAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classi\Caselle\Casella.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -66,14 +66,6 @@
   </Class>
   <Class Name="ProgettoMonopoly.Proprieta">
     <Position X="7.75" Y="7" Width="1.5" />
-    <InheritanceLine Type="ProgettoMonopoly.Casella" FixedFromPoint="true">
-      <Path>
-        <Point X="5.688" Y="3.642" />
-        <Point X="5.688" Y="6.625" />
-        <Point X="8.5" Y="6.625" />
-        <Point X="8.5" Y="7" />
-      </Path>
-    </InheritanceLine>
     <AssociationLine Name="Contratto" Type="ProgettoMonopoly.Contratto" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="7.75" Y="9.66" />
@@ -93,18 +85,12 @@
   <Class Name="ProgettoMonopoly.Banca">
     <Position X="10.75" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAIAAAAAAAIAAAAAgAAAAAoAAAAACAABA=</HashCode>
+      <HashCode>AAAAEAAAAAAAIAAAAAAAIAAAAAgAAAAAoAAAAACAABA=</HashCode>
       <FileName>Banca.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Via">
     <Position X="4.5" Y="7.75" Width="1.5" />
-    <InheritanceLine Type="ProgettoMonopoly.Casella" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="5" Y="3.641" />
-        <Point X="5" Y="7.75" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAACAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classi\Caselle\Via.cs</FileName>
@@ -233,6 +219,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Parcheggio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgettoMonopoly.Server">
+    <Position X="16.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAgAAAAAAAAAAAAAIQAAAAAAQAABAAA=</HashCode>
+      <FileName>Server.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

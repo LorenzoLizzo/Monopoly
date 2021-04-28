@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows;
 
 namespace ProgettoMonopoly
 {
@@ -9,11 +10,13 @@ namespace ProgettoMonopoly
     {
         private string _nomeCasella;
         private int _numeroCasella;
+        private Thickness _margine;
 
-        public Casella(string nomeCasella, int numeroCasella)
+        public Casella(string nomeCasella, int numeroCasella, Thickness margine)
         {
             NomeCasella = nomeCasella;
             Numerocasella = numeroCasella;
+            Margine = margine;
         }
 
         public string NomeCasella
@@ -37,6 +40,18 @@ namespace ProgettoMonopoly
             private set
             {
                 _numeroCasella = value;
+            }
+        }
+
+        public Thickness Margine
+        {
+            get
+            {
+                return _margine;
+            }
+            private set
+            {
+                _margine = value;
             }
         }
 

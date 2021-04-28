@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgettoMonopoly"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Home" Height="400" Width="400">
     <Grid>
-        
+        <TextBlock HorizontalAlignment="Left" Margin="153,10,0,0" TextWrapping="Wrap" Text="Nome" VerticalAlignment="Top" FontSize="24"/>
+
+        <TextBox x:Name="txtBoxNome" HorizontalAlignment="Left" Height="40" Margin="10,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" FontSize="24" Text=""/>
+        <Button x:Name="btnInviaRichiestaGioco" Content="Gioca!" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="144" FontSize="24" Height="45" Margin="124,0,124,40" Click="btnInviaRichiestaGioco_Click"/>
+
     </Grid>
 </Window>
