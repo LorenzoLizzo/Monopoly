@@ -24,14 +24,14 @@
   <Class Name="ProgettoMonopoly.CartaImprevisto">
     <Position X="13.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classi\Carte imprevisto e probabilita\CartaImprevisto.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.CartaProbabilita">
     <Position X="13.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classi\Carte imprevisto e probabilita\CartaProbabilita.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -56,7 +56,7 @@
   <Class Name="ProgettoMonopoly.Pedina">
     <Position X="2.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BACQKAEAAAAAAAAAgEAAAABDAAAAAAAQoAYIIAGAAgA=</HashCode>
+      <HashCode>BACQKAEAAAAAAAAAgAAAAABDAAAAAAAQoAYAIAEAAAA=</HashCode>
       <FileName>Pedina.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -224,7 +224,7 @@
   <Class Name="ProgettoMonopoly.Server">
     <Position X="16.5" Y="11.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAgAAAAAAAAAAAAAIQAAAAAAQAABAAA=</HashCode>
+      <HashCode>CAwAAgAAAAMIBQAAAAgAAAAABgAACQgAAAAAQAAAAAA=</HashCode>
       <FileName>Server.cs</FileName>
     </TypeIdentifier>
   </Class>

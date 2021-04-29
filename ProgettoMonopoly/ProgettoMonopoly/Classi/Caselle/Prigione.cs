@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows;
 
 namespace ProgettoMonopoly
 {
@@ -10,7 +11,8 @@ namespace ProgettoMonopoly
         private List<Pedina> _pedineInPrigione;
         private const int _quotaPerUscire = 125;
         private int _numeroRound;
-        public Prigione(string nomeCasella, uint numeroCasella) : base(nomeCasella, numeroCasella)
+
+        public Prigione(string nomeCasella, int numeroCasella, Thickness margine) : base(nomeCasella, numeroCasella, margine)
         {
             NumeroRound = 0;
             _pedineInPrigione = new List<Pedina>();

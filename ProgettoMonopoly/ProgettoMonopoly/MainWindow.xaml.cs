@@ -32,36 +32,50 @@ namespace ProgettoMonopoly
 
         private void btnInviaRichiestaGioco_Click(object sender, RoutedEventArgs e)
         {
-            server.EntraPartita(txtBoxNome.Text);
-            ControlloStatoPartita();
+            try
+            {
+                server.EntraPartita(txtBoxNome.Text);
+                ControlloStatoPartita();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public async void ControlloStatoPartita()
         {
-            await Task.Run(() =>
+            try
             {
-                bool giaEntrato = false;
-                while (true)
+                await Task.Run(() =>
                 {
-                    if(server.InLobby && giaEntrato)
+                    bool giaEntrato = false;
+                    while (true)
                     {
-                        giaEntrato = true;
-                        MessageBox.Show("Sei stato inserito nella partita, aspetta che tutti i giocatori si uniscano");
+                        if (server.InLobby && giaEntrato)
+                        {
+                            giaEntrato = true;
+                            MessageBox.Show("Sei stato inserito nella partita, aspetta che tutti i giocatori si uniscano");
+                        }
+                        else if (server.InGame)
+                        {
+                            FinestraDiGioco finestraDiGioco = new FinestraDiGioco(server);
+                            finestraDiGioco.Show();
+                            this.Close();
+                        }
+                        else if (server.Errore != null)
+                        {
+                            MessageBox.Show(server.Errore);
+                        }
+                        Thread.Sleep(1);
                     }
-                    else if(server.InGame)
-                    {
-                        FinestraDiGioco finestraDiGioco = new FinestraDiGioco(server);
-                        finestraDiGioco.Show();
-                        this.Close();
-                    }
-                    else if(server.Errore != null)
-                    {
-                        MessageBox.Show(server.Errore);
-                    }
-                    Thread.Sleep(1);
-                }
 
-            });
+                });
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
 
         }
     }

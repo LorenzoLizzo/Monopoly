@@ -62,6 +62,9 @@
     <Compile Include="Classi\Contratti\ContrattoStazione.cs" />
     <Compile Include="Classi\Contratti\ContrattoStrada.cs" />
     <Compile Include="Distretto.cs" />
+    <Compile Include="FinestraDiGioco.xaml.cs">
+      <DependentUpon>FinestraDiGioco.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gioco.cs" />
     <Compile Include="ImpresaPubblica.cs" />
     <Compile Include="Classi\Caselle\InPrigione.cs" />
@@ -71,12 +74,17 @@
     <Compile Include="Pedina.cs" />
     <Compile Include="Classi\Caselle\Prigione.cs" />
     <Compile Include="Classi\Caselle\Proprieta.cs" />
+    <Compile Include="Server.cs" />
     <Compile Include="Stazione.cs" />
     <Compile Include="Strada.cs" />
     <Compile Include="Tabellone.cs" />
     <Compile Include="Classi\Caselle\Via.cs" />
     <Compile Include="Tassa.cs" />
     <Compile Include="Turno.cs" />
+    <Page Include="FinestraDiGioco.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -124,7 +132,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Immagini\" />
+    <Resource Include="Immagini\tabelloneMonopoly.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tabelloneMonopoly.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Immagini\FacceDadi\faccia1.png" />
+    <Resource Include="Immagini\FacceDadi\faccia2.png" />
+    <Resource Include="Immagini\FacceDadi\faccia3.png" />
+    <Resource Include="Immagini\FacceDadi\faccia4.png" />
+    <Resource Include="Immagini\FacceDadi\faccia5.png" />
+    <Resource Include="Immagini\FacceDadi\faccia6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

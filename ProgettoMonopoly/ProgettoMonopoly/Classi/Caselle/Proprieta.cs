@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows;
 
 namespace ProgettoMonopoly
 {
@@ -12,7 +13,7 @@ namespace ProgettoMonopoly
         private int _livelloProprieta;
         private Pedina _proprietario;
 
-        public Proprieta(int numeroCasella, string nome, Contratto contratto) : base(nome, numeroCasella)
+        public Proprieta(int numeroCasella, string nome, Contratto contratto, Thickness margine) : base(nome, numeroCasella, margine)
         {
             LivelloProprieta = 0;
             Comprata = false;

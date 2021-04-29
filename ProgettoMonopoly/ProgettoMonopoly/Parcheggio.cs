@@ -7,7 +7,7 @@ namespace ProgettoMonopoly
 {
     public class Parcheggio : Casella
     {
-        public Casella()
+        public Parcheggio() : base()
         {
 
         }

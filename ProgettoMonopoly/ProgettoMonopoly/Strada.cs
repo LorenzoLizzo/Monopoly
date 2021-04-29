@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows;
 
 namespace ProgettoMonopoly
 {
     public class Strada : Proprieta
     {
         private Distretto _distretto;
-        public Strada()
+        public Strada(int numeroCasella, string nome, Contratto contratto, Thickness margine) : base(numeroCasella, nome, contratto, margine)
         {
 
         }

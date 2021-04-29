@@ -18,6 +18,11 @@ namespace ProgettoMonopoly
             Numerocasella = numeroCasella;
             Margine = margine;
         }
+        
+        public Casella()
+        {
+
+        }
 
         public string NomeCasella
         {

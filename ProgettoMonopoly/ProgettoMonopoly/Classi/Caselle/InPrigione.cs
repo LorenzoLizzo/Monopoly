@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows;
 
 namespace ProgettoMonopoly
 {
     public class InPrigione : Casella
     {
-        public InPrigione(string nomeCasella, uint numeroCasella) : base(nomeCasella, numeroCasella)
+        public InPrigione(string nomeCasella, int numeroCasella, Thickness margine) : base(nomeCasella, numeroCasella, margine)
         {
             
         }

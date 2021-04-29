@@ -119,6 +119,7 @@ namespace ProgettoMonopoly
                 
         }
 
+        /*
         public void PagaRendita(Proprieta proprieta, Pedina pedina)
         {
             if(proprieta is Terreno || proprieta is Casa || proprieta is Albergo)
@@ -146,7 +147,7 @@ namespace ProgettoMonopoly
             }
             
         }
-
+        
         public void MiglioraProprieta()
         {
             foreach(Proprieta proprieta in ListaProprieta)
@@ -167,21 +168,11 @@ namespace ProgettoMonopoly
                 
             }
         }
-
+        */
         //da fare ipoteca e derivanti
         public void Ipoteca(Proprieta proprieta)
         {
             //da fare
-        }
-
-        public CartaImprevisto Imprevisto(ref Imprevisto imprevisto)
-        {
-            return imprevisto.Pesca();
-        }
-
-        public CartaProbabilita Probabilita(ref Probabilita probabilita)
-        {
-            return probabilita.Pesca();
         }
 
         public bool Equals(Pedina other)
