@@ -15,7 +15,7 @@ namespace ProgettoMonopoly
         private float _denaroPedina;
         private List<Proprieta> _listaProprietaIpotecate;
 
-        public Pedina(float denaro)
+        public Pedina(string nome)
         {
             PedinaInPrigione = false;
         }

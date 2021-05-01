@@ -21,6 +21,8 @@ namespace ProgettoMonopoly
     public partial class FinestraDiGioco : Window
     {
         Server server;
+        Gioco client;
+        Tabellone tabellone;
 
         readonly Uri uriFaccia1 = new Uri(@"\Immagini\FacceDadi\faccia1.png", UriKind.Relative);
         readonly Uri uriFaccia2 = new Uri(@"\Immagini\FacceDadi\faccia2.png", UriKind.Relative);
@@ -34,11 +36,12 @@ namespace ProgettoMonopoly
         int dado2;
         bool estratti = false;
 
-        public FinestraDiGioco(Server server)
+        public FinestraDiGioco(Server server, Tabellone tabellone)
         {
             InitializeComponent();
             SorteggioDadi();
             this.server = server;
+            client = new Gioco(tabellone, server.Turni);
         }
 
         public FinestraDiGioco()
@@ -46,6 +49,8 @@ namespace ProgettoMonopoly
             InitializeComponent();
             SorteggioDadi();
             server = new Server();
+            tabellone = new Tabellone();
+            client = new Gioco(tabellone, server.Turni);
         }
 
         private async void SorteggioDadi()
@@ -75,7 +80,7 @@ namespace ProgettoMonopoly
 
         }
 
-        public void AssegnazioneImmagine(Image img, int dado)
+        private void AssegnazioneImmagine(Image img, int dado)
         {
             try
             {
@@ -115,6 +120,35 @@ namespace ProgettoMonopoly
             int sommaDadi = int.Parse(imgDado1.Source.ToString()[imgDado1.Source.ToString().Length - 5].ToString()) + int.Parse(imgDado2.Source.ToString()[imgDado2.Source.ToString().Length - 5].ToString());
             string messaggio = $"MOVE {sommaDadi}";
             server.InviaMessaggio(messaggio);
+
+            client.MuoviPedina(sommaDadi);
+
+            if(client.TurnoAttuale.Pedina.Posizione is Proprieta && (client.TurnoAttuale.Pedina.Posizione as Proprieta).Comprata == false)
+            {
+                btnCompra.IsEnabled = true;
+                btnNonComprare.IsEnabled = true;
+            }
+           
+        }
+
+        private void btnCompra_Click(object sender, RoutedEventArgs e)
+        {
+            string messaggio = $"BUY {client.TurnoAttuale.Pedina.Posizione.Numerocasella}";
+            server.InviaMessaggio(messaggio);
+
+            client.CompraProprieta();
+
+        }
+
+        private void btnNonComprare_Click(object sender, RoutedEventArgs e)
+        {
+            string messaggio = $"NOBUY";
+            server.InviaMessaggio(messaggio);
+        }
+
+        private void CambiaTurno()
+        {
+
         }
     }
 }

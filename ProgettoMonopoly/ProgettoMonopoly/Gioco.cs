@@ -16,9 +16,9 @@ namespace ProgettoMonopoly
         private Turno _turnoAttuale;
         private Queue<Turno> _listaTurni;
 
-        public Gioco(Tabellone tabellone)
+        public Gioco(Tabellone tabellone, Queue<Turno> listaTurni)
         {
-
+            // Setup(listaTurni);
         }
 
         private Tabellone Tabellone
@@ -57,7 +57,7 @@ namespace ProgettoMonopoly
             }
         }
 
-        private Turno TurnoAttuale
+        public Turno TurnoAttuale
         {
             get
             {
@@ -69,7 +69,7 @@ namespace ProgettoMonopoly
             }
         }
 
-        public Queue<Turno> ListaTurni
+        private Queue<Turno> ListaTurni
         {
             get
             {
@@ -81,52 +81,30 @@ namespace ProgettoMonopoly
             }
         }
 
-        public void Setup(Dictionary<Pedina, int> dadiLanciati)
+        private void Setup(Queue<Turno> listaTurni)
         {
-            foreach (Pedina pedina in ListaPedine)
+            ListaTurni = listaTurni;
+            foreach (Turno turno in ListaTurni)
             {
-                pedina.Posizione = Tabellone.GetCasella(0);
-                Banca.DistribuisciDenaroIniziale(pedina);
+                turno.Pedina.Posizione = Tabellone.GetCasella(0);
+                Banca.DistribuisciDenaroIniziale(turno.Pedina);
             }
-            DeterminaTurni(dadiLanciati);
+            
         }
 
-        private void DeterminaTurni(Dictionary<Pedina, int> dadiLanciati)
-        {
-            dadiLanciati.OrderByDescending(key => key.Value);
-
-            foreach (KeyValuePair<Pedina,int> riga in dadiLanciati)
-            {
-                Turno turno = new Turno(riga.Key);
-                ListaTurni.Enqueue(turno);
-            }
-
-        }
-
-        public void MuoviPedina(int dado1, int dado2)
+        public void MuoviPedina(int sommaDadi)
         {
             if (ListaPedine.Contains(TurnoAttuale.Pedina))
             {
                 if(!TurnoAttuale.Pedina.PedinaInPrigione)
-                {
-                    int somma = dado1 + dado2;
-
+                { 
                     int posizioneAttualePedina = TurnoAttuale.Pedina.Posizione.Numerocasella;
 
-                    TurnoAttuale.Pedina.Posizione = Tabellone.GetCasella(posizioneAttualePedina + somma);
+                    TurnoAttuale.Pedina.Posizione = Tabellone.GetCasella(posizioneAttualePedina + sommaDadi);
 
                     if(TurnoAttuale.Pedina.Posizione.Numerocasella < posizioneAttualePedina)
                     {
                         Banca.PagaPassaggioDalVia(TurnoAttuale.Pedina, _passaggioDalVia);
-                    }
-
-                    if (dado1 != dado2)
-                    {
-                        TurnoAttuale.NumeroVolteDoppiDadi = 0;
-                    }
-                    else if (dado1 == dado2 && TurnoAttuale.NumeroVolteDoppiDadi >= 3)
-                    {
-                        TurnoAttuale.Pedina.Posizione = Tabellone.GetPrigione();
                     }
                 }
                 else
@@ -145,12 +123,10 @@ namespace ProgettoMonopoly
         public void CompraProprieta()
         {
             Banca.VendiProprietaAPedina(TurnoAttuale.Pedina);
-            CambiaTurno();
         }
 
         public Asta RifiutaProprieta()
         {
-            CambiaTurno();
             Asta asta = new Asta(TurnoAttuale.Pedina.Posizione as Proprieta, ListaPedine);
             return asta;
         }
@@ -160,13 +136,6 @@ namespace ProgettoMonopoly
             int affitto = (TurnoAttuale.Pedina.Posizione as Proprieta).Contratto.Rendita[(TurnoAttuale.Pedina.Posizione as Proprieta).LivelloProprieta];
             TurnoAttuale.Pedina.DenaroPedina -= affitto;
             (TurnoAttuale.Pedina.Posizione as Proprieta).Proprietario.DenaroPedina += affitto;
-            CambiaTurno();
-        }
-
-        public void CambiaTurno()
-        {
-            ListaTurni.Enqueue(TurnoAttuale);
-            ListaTurni.Dequeue();
         }
 
         public async void MiglioraProprieta(Proprieta proprieta) // solo strada
@@ -214,8 +183,12 @@ namespace ProgettoMonopoly
             Banca.DenaroBanca += (TurnoAttuale.Pedina.Posizione as Tassa).Costo;
         }
 
-        
+        public void CambiaTurno()
+        {
+            ListaTurni.Enqueue(TurnoAttuale);
+            ListaTurni.Dequeue();
+        }
 
-        
+
     }
 }

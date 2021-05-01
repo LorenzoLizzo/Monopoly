@@ -60,7 +60,7 @@ namespace ProgettoMonopoly
                         }
                         else if (server.InGame)
                         {
-                            FinestraDiGioco finestraDiGioco = new FinestraDiGioco(server);
+                            FinestraDiGioco finestraDiGioco = new FinestraDiGioco(server, new Tabellone());
                             finestraDiGioco.Show();
                             this.Close();
                         }

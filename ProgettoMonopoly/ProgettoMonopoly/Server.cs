@@ -16,11 +16,11 @@ namespace ProgettoMonopoly
         private Socket _socket;
         private EndPoint _endPointLocale;
         
-
         private bool _inLobby;
         private bool _inGame;
         private string _errore;
         private int _numeroCartaAssegnato;
+        private Queue<Turno> _turni;
 
         public Server()
         {
@@ -73,6 +73,18 @@ namespace ProgettoMonopoly
             set
             {
                 _numeroCartaAssegnato = value;
+            }
+        }
+
+        public Queue<Turno> Turni
+        {
+            get
+            {
+                return _turni;
+            }
+            private set
+            {
+                _turni = value;
             }
         }
 
@@ -139,7 +151,7 @@ namespace ProgettoMonopoly
         public void InviaMessaggio(string messaggioDaInviare)
         {
             byte[] dati = Encoding.ASCII.GetBytes(messaggioDaInviare);
-
+            
             IPEndPoint endPointRemoto = new IPEndPoint(IPAddress.Parse("*****"), _portaServer); // da inserire server
 
             Socket.SendTo(dati, endPointRemoto);
@@ -156,7 +168,9 @@ namespace ProgettoMonopoly
             else if (messaggioRicezione.Contains("STARTGAME"))
             {
                 //implementa
+                InLobby = false;
                 InGame = true;
+                Turni = DeterminaTurniECreaPedine(messaggioRicezione);
             }
             else if (messaggioRicezione.Contains("TURN"))
             {
@@ -165,7 +179,19 @@ namespace ProgettoMonopoly
             //implementa
         }
 
+        private Queue<Turno> DeterminaTurniECreaPedine(string messaggioRicezione)
+        {
+            Queue<Turno> codaTurni = new Queue<Turno>();
 
+            string[] nomiGiocatori = messaggioRicezione.Split(' ');
+
+            for (int i = 1; i < nomiGiocatori.Length; i++)
+            {
+                Pedina pedina = new Pedina(nomiGiocatori[i]);
+                codaTurni.Enqueue(new Turno(pedina));
+            }
+            return codaTurni;
+        }
 
     }
 }
