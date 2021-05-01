@@ -20,6 +20,8 @@ namespace ProgettoMonopoly
     /// </summary>
     public partial class FinestraDiGioco : Window
     {
+        Server server;
+
         readonly Uri uriFaccia1 = new Uri(@"\Immagini\FacceDadi\faccia1.png", UriKind.Relative);
         readonly Uri uriFaccia2 = new Uri(@"\Immagini\FacceDadi\faccia2.png", UriKind.Relative);
         readonly Uri uriFaccia3 = new Uri(@"\Immagini\FacceDadi\faccia3.png", UriKind.Relative);
@@ -35,12 +37,15 @@ namespace ProgettoMonopoly
         public FinestraDiGioco(Server server)
         {
             InitializeComponent();
+            SorteggioDadi();
+            this.server = server;
         }
 
         public FinestraDiGioco()
         {
             InitializeComponent();
             SorteggioDadi();
+            server = new Server();
         }
 
         private async void SorteggioDadi()
@@ -104,10 +109,12 @@ namespace ProgettoMonopoly
             }
         }
 
-
         private void btnLanciaDadi_Click(object sender, RoutedEventArgs e)
         {
-            estratti = true; 
+            estratti = true;
+            int sommaDadi = int.Parse(imgDado1.Source.ToString()[imgDado1.Source.ToString().Length - 5].ToString()) + int.Parse(imgDado2.Source.ToString()[imgDado2.Source.ToString().Length - 5].ToString());
+            string messaggio = $"MOVE {sommaDadi}";
+            server.InviaMessaggio(messaggio);
         }
     }
 }

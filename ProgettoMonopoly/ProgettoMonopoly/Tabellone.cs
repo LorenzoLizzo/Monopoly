@@ -8,13 +8,13 @@ namespace ProgettoMonopoly
 {
     public class Tabellone
     {
-        private Dictionary<int,Casella> _listaCaselle;
+        private List <Casella> _listaCaselle;
         private ObservableCollection<Pedina> _listaPedine;
         private MazzoImprevisti _mazzoImprevisti;
         private MazzoProbabilita _mazzoProbabilita;
         private Dictionary<int, int> _listaBanconote; //chiave tipo banconata es:500 valore numero di quelle banconote es:2
 
-        public Tabellone(Dictionary<int, Casella> listaCaselle, ObservableCollection<Pedina> listaPedine, MazzoImprevisti mazzoImprevisti,
+        public Tabellone(List<Casella> listaCaselle, ObservableCollection<Pedina> listaPedine, MazzoImprevisti mazzoImprevisti,
             MazzoProbabilita mazzoProbabilita, Dictionary<int, int> listaBanconote)
         {
             ListaCaselle = listaCaselle;
@@ -29,7 +29,7 @@ namespace ProgettoMonopoly
 
         }
 
-        private Dictionary<int, Casella> ListaCaselle
+        private List<Casella> ListaCaselle
         {
             get
             {
@@ -91,24 +91,28 @@ namespace ProgettoMonopoly
 
         public Casella GetCasella(int indice)
         {
-            Casella casella;
-
             if (indice > 40)
             {
                 indice -= 40;
             }
 
-            ListaCaselle.TryGetValue(indice, out casella);
-            return casella;
+            foreach (Casella item in ListaCaselle)
+            {
+                if(item.Numerocasella == indice)
+                {
+                    return item;
+                }
+            }
+            throw new Exception("Casella non trovata");
         }
 
         public Prigione GetPrigione()
         {
-            foreach (KeyValuePair<int,Casella> casella in ListaCaselle)
+            foreach (Casella casella in ListaCaselle)
             {
-                if(casella.Value is Prigione)
+                if(casella is Prigione)
                 {
-                    return casella.Value as Prigione;
+                    return casella as Prigione;
                 }
             }
             throw new Exception();

@@ -22,7 +22,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.CartaImprevisto">
-    <Position X="13.25" Y="2.5" Width="1.5" />
+    <Position X="13.25" Y="3" Width="1.5" />
+    <InheritanceLine Type="ProgettoMonopoly.Carta" FixedFromPoint="true">
+      <Path>
+        <Point X="16" Y="2.812" />
+        <Point X="14" Y="2.812" />
+        <Point X="14" Y="3" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classi\Carte imprevisto e probabilita\CartaImprevisto.cs</FileName>
@@ -173,7 +180,7 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="ProgettoMonopoly.Gioco">
-    <Position X="21" Y="1.25" Width="1.5" />
+    <Position X="19.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACiIAAQCRAAAAQBAIAAAAiggAAAAAAACEJAA=</HashCode>
       <FileName>Gioco.cs</FileName>
@@ -222,7 +229,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Server">
-    <Position X="16.5" Y="11.25" Width="1.5" />
+    <Position X="16.25" Y="10.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAwAAgAAAAMIBQAAAAgAAAAABgAACQgAAAAAQAAAAAA=</HashCode>
       <FileName>Server.cs</FileName>

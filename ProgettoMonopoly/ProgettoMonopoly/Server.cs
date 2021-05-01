@@ -15,10 +15,12 @@ namespace ProgettoMonopoly
         private int _portaClient;
         private Socket _socket;
         private EndPoint _endPointLocale;
+        
 
         private bool _inLobby;
         private bool _inGame;
         private string _errore;
+        private int _numeroCartaAssegnato;
 
         public Server()
         {
@@ -62,6 +64,18 @@ namespace ProgettoMonopoly
             }
         }
 
+        private int NumeroCartaAssegnato
+        {
+            get
+            {
+                return _numeroCartaAssegnato;
+            }
+            set
+            {
+                _numeroCartaAssegnato = value;
+            }
+        }
+
         private int PortaClient
         {
             get
@@ -98,13 +112,12 @@ namespace ProgettoMonopoly
             }
         }
 
-        public async void RicezioneMessaggi()
+        private async void RicezioneMessaggi()
         {
             await Task.Run(() =>
             {
                 while (true)
                 {
-
                     if (Socket.Available != 0)
                     {
                         // Ricezione
@@ -123,11 +136,9 @@ namespace ProgettoMonopoly
 
         }
 
-        public void EntraPartita(string nomeGiocatore)
+        public void InviaMessaggio(string messaggioDaInviare)
         {
-            string richiestaGioco = $"INSERT {nomeGiocatore}";
-
-            byte[] dati = Encoding.ASCII.GetBytes(richiestaGioco);
+            byte[] dati = Encoding.ASCII.GetBytes(messaggioDaInviare);
 
             IPEndPoint endPointRemoto = new IPEndPoint(IPAddress.Parse("*****"), _portaServer); // da inserire server
 
@@ -146,6 +157,10 @@ namespace ProgettoMonopoly
             {
                 //implementa
                 InGame = true;
+            }
+            else if (messaggioRicezione.Contains("TURN"))
+            {
+                NumeroCartaAssegnato = int.Parse(messaggioRicezione.Split(' ')[1]);
             }
             //implementa
         }

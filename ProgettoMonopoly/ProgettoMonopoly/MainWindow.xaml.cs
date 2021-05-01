@@ -34,7 +34,8 @@ namespace ProgettoMonopoly
         {
             try
             {
-                server.EntraPartita(txtBoxNome.Text);
+                string richiestaGioco = $"INSERT {txtBoxNome.Text}";
+                server.InviaMessaggio(richiestaGioco);
                 ControlloStatoPartita();
             }
             catch(Exception ex)
