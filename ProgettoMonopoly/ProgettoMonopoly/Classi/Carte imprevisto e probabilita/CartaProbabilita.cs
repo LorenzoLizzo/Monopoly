@@ -7,22 +7,17 @@ namespace ProgettoMonopoly
 {
     public class CartaProbabilita : Carta
     {
-        private int _id;
-        public CartaProbabilita(string descrizione) : base(descrizione)
+       
+        public CartaProbabilita(int id, string descrizione) : base(id, descrizione)
         {
 
         }
 
-        public int Id
+        public CartaProbabilita() : base()
         {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                _id = value;
-            }
+
         }
+
+        
     }
 }

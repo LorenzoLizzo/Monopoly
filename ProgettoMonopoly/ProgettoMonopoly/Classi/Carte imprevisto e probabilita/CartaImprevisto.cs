@@ -7,22 +7,16 @@ namespace ProgettoMonopoly
 {
     public class CartaImprevisto : Carta
     {
-        private int _id;
-        public CartaImprevisto(string descrizione) : base(descrizione)
+        public CartaImprevisto(int id, string descrizione) : base(id, descrizione)
         {
 
         }
 
-        public int Id
+        public CartaImprevisto() : base()
         {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                _id = value;
-            }
+
         }
+
+       
     }
 }

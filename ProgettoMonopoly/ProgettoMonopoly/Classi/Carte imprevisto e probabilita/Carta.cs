@@ -2,16 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace ProgettoMonopoly
 {
     public abstract class Carta
     {
+        private int _id;
         private string _descrizione;
         
-        public Carta(string descrizione)
+        public Carta(int id, string descrizione)
         {
+            Id = id;
             Descrizione = descrizione;
+        }
+        public Carta()
+        {
+
+        }
+
+        [XmlAttribute (AttributeName = "Id")]
+        public int Id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
         }
 
         public string Descrizione
@@ -20,7 +40,7 @@ namespace ProgettoMonopoly
             {
                 return _descrizione;
             }
-            private set
+            set
             {
                 _descrizione = value;
             }

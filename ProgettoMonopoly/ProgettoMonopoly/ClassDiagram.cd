@@ -25,34 +25,33 @@
     <Position X="13.25" Y="3" Width="1.5" />
     <InheritanceLine Type="ProgettoMonopoly.Carta" FixedFromPoint="true">
       <Path>
-        <Point X="16" Y="2.812" />
-        <Point X="14" Y="2.812" />
-        <Point X="14" Y="3" />
+        <Point X="16" Y="3.111" />
+        <Point X="14.75" Y="3.111" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classi\Carte imprevisto e probabilita\CartaImprevisto.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.CartaProbabilita">
     <Position X="13.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classi\Carte imprevisto e probabilita\CartaProbabilita.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Carta">
     <Position X="16" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <HashCode>ABACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
       <FileName>Classi\Carte imprevisto e probabilita\Carta.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Tabellone">
     <Position X="0.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgAAAAAABAAIAAAAACQACAAAAABQAEAABAAAAABAQ=</HashCode>
+      <HashCode>AAAgAAAAAABAAIAAAAACQADAAAAABQAUAABAAAAABAQ=</HashCode>
       <FileName>Tabellone.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -63,7 +62,7 @@
   <Class Name="ProgettoMonopoly.Pedina">
     <Position X="2.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>FACQKAECAAAAAAAAgAAAAABDAAAAAAAQoAYAIAEAAAA=</HashCode>
+      <HashCode>BACQKAEAAAAAAAAAgAAAAABDAAAAAAAQoAYAIAEAAAA=</HashCode>
       <FileName>Pedina.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -182,7 +181,7 @@
   <Class Name="ProgettoMonopoly.Gioco">
     <Position X="19.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAACiIAAQCRAAAAQBAIAAAAiggAAAAAAACEJAA=</HashCode>
+      <HashCode>AAAAAAAACiIAAQCRAAAAQBAIAAAAiAgAAAAAAACEJAA=</HashCode>
       <FileName>Gioco.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -231,7 +230,7 @@
   <Class Name="ProgettoMonopoly.Server">
     <Position X="16.25" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAwAAgAAAAMIAQAACAiAAAAQBgAACQgAAAAAQAAAAAA=</HashCode>
+      <HashCode>CAwAAgAAAAMIAQAACAiAEAAQBgAACQgAAAAAQAAAACA=</HashCode>
       <FileName>Server.cs</FileName>
     </TypeIdentifier>
   </Class>

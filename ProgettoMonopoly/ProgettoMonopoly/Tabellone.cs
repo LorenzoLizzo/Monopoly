@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections.ObjectModel;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace ProgettoMonopoly
 {
@@ -26,7 +28,8 @@ namespace ProgettoMonopoly
 
         public Tabellone()
         {
-
+            DeserializzazioneMazzoImprevisti();
+            DeserializzazioneMazzoProbabilita();
         }
 
         private List<Casella> ListaCaselle
@@ -118,5 +121,38 @@ namespace ProgettoMonopoly
             throw new Exception();
         }
 
+        private void DeserializzazioneMazzoImprevisti()
+        {
+            XmlSerializer deserializzatore = new XmlSerializer(typeof(MazzoImprevisti));
+            using (StreamReader sr = new StreamReader("Imprevisti.xml"))
+            {
+                if(sr.ReadLine() != null)
+                {
+                    MazzoImprevisti = deserializzatore.Deserialize(sr) as MazzoImprevisti;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+                
+            }
+        }
+
+        private void DeserializzazioneMazzoProbabilita()
+        {
+            XmlSerializer deserializzatore = new XmlSerializer(typeof(MazzoProbabilita));
+            using (StreamReader sr = new StreamReader("Probabilita.xml"))
+            {
+                if (sr.ReadLine() != null)
+                {
+                    MazzoProbabilita = deserializzatore.Deserialize(sr) as MazzoProbabilita;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+
+            }
+        }
     }
 }

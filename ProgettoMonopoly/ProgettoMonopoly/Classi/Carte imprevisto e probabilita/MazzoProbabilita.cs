@@ -2,27 +2,31 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Collections.ObjectModel;
 
 namespace ProgettoMonopoly
 {
     public class MazzoProbabilita
     {
-        private ObservableCollection<CartaProbabilita> _listaProbabilita;
+        private List<CartaProbabilita> _listaProbabilita;
 
-        public MazzoProbabilita(ObservableCollection<CartaProbabilita> listaProbabilita)
+        public MazzoProbabilita(List<CartaProbabilita> listaProbabilita)
         {
             ListaProbabilita = listaProbabilita;
             MischiaMazzo();
         }
 
-        public ObservableCollection<CartaProbabilita> ListaProbabilita
+        public MazzoProbabilita()
+        {
+
+        }
+
+        public List<CartaProbabilita> ListaProbabilita
         {
             get
             {
                 return _listaProbabilita;
             }
-            private set
+            set
             {
                 _listaProbabilita = value;
             }
