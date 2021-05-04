@@ -176,6 +176,14 @@ namespace ProgettoMonopoly
             {
                 NumeroCartaAssegnato = int.Parse(messaggioRicezione.Split(' ')[1]);
             }
+            else if (messaggioRicezione.Contains("BANK"))
+            {
+
+            }
+            else if (messaggioRicezione.Contains("ISMOVE"))
+            {
+
+            }
             //implementa
         }
 

@@ -13,14 +13,9 @@ namespace ProgettoMonopoly
 
         }
 
-        public CartaImprevisto Pesca(ref MazzoImprevisti mazzo)
+        public CartaImprevisto Pesca(MazzoImprevisti mazzo, int posizioneCartaPescata)
         {
-            CartaImprevisto cartaPescata = mazzo.ListaImprevisti[0];
-
-            mazzo.ListaImprevisti.RemoveAt(0);
-            mazzo.ListaImprevisti.Add(cartaPescata);
-            
-            return cartaPescata;
+            return mazzo.ListaImprevisti[posizioneCartaPescata];
         }
 
     }

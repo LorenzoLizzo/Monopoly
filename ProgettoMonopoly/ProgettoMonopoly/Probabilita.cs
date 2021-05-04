@@ -13,14 +13,9 @@ namespace ProgettoMonopoly
             
         }
 
-        public CartaProbabilita Pesca(ref MazzoProbabilita mazzo)
+        public CartaProbabilita Pesca(MazzoProbabilita mazzo, int posizioneCartaPescata)
         {
-            CartaProbabilita cartaPescata = mazzo.ListaProbabilita[0];
-
-            mazzo.ListaProbabilita.RemoveAt(0);
-            mazzo.ListaProbabilita.Add(cartaPescata);
-
-            return cartaPescata;
+            return mazzo.ListaProbabilita[posizioneCartaPescata];
         }
     }
 }

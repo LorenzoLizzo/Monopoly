@@ -119,62 +119,6 @@ namespace ProgettoMonopoly
                 
         }
 
-        /*
-        public void PagaRendita(Proprieta proprieta, Pedina pedina)
-        {
-            if(proprieta is Terreno || proprieta is Casa || proprieta is Albergo)
-            {
-                if(proprieta is Terreno)
-                {
-                    this.DenaroPedina -= (proprieta as Terreno).Rendita[(proprieta as Terreno).LivelloProprieta];
-                    pedina.DenaroPedina += (proprieta as Terreno).Rendita[(proprieta as Terreno).LivelloProprieta];
-                }
-                else if(proprieta is Casa)
-                {
-                    this.DenaroPedina -= (proprieta as Casa).Rendita[(proprieta as Casa).LivelloProprieta];
-                    pedina.DenaroPedina += (proprieta as Casa).Rendita[(proprieta as Casa).LivelloProprieta];
-                }
-                else
-                {
-                    this.DenaroPedina -= (proprieta as Albergo).Rendita[(proprieta as Albergo).LivelloProprieta];
-                    pedina.DenaroPedina += (proprieta as Albergo).Rendita[(proprieta as Albergo).LivelloProprieta];
-                }
-            }
-            else
-            {
-                this.DenaroPedina -= proprieta.Rendita[0];
-                pedina.DenaroPedina += proprieta.Rendita[0];
-            }
-            
-        }
-        
-        public void MiglioraProprieta()
-        {
-            foreach(Proprieta proprieta in ListaProprieta)
-            {
-                if((proprieta is Terreno || proprieta is Casa) && proprieta.Numerocasella == this.Posizione)
-                {
-                    if (proprieta is Terreno)
-                    {
-                        (proprieta as Terreno).LivelloProprieta++;
-                    }
-                    else if (proprieta is Casa)
-                    {
-                        (proprieta as Casa).LivelloProprieta++;
-                    }
-                    break;
-                }
-
-                
-            }
-        }
-        */
-        //da fare ipoteca e derivanti
-        public void Ipoteca(Proprieta proprieta)
-        {
-            //da fare
-        }
-
         public bool Equals(Pedina other)
         {
             if(this.Nome == other.Nome)

@@ -23,11 +23,28 @@ namespace ProgettoMonopoly
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<BitmapImage> listaPedine;
+        Uri uriScarpa = new Uri(@"\Immagini\Pedine\Scarpa.png", UriKind.Relative);
+        Uri uriCappello = new Uri(@"\Immagini\Pedine\Cappello.png", UriKind.Relative);
+        Uri uriCariola = new Uri(@"\Immagini\Pedine\Cariola.png", UriKind.Relative);
+        Uri uriDitale = new Uri(@"\Immagini\Pedine\Ditale.png", UriKind.Relative);
+
         Server server;
         public MainWindow()
         {
             InitializeComponent();
+            CaricamentoPedine();
             server = new Server();
+        }
+
+        private void CaricamentoPedine()
+        {
+            listaPedine = new List<BitmapImage>();
+            listaPedine.Add(new BitmapImage(uriScarpa));
+            listaPedine.Add(new BitmapImage(uriCappello));
+            listaPedine.Add(new BitmapImage(uriCariola));
+            listaPedine.Add(new BitmapImage(uriDitale));
+            imgPedina.Source = listaPedine[0];
         }
 
         private void btnInviaRichiestaGioco_Click(object sender, RoutedEventArgs e)
@@ -53,7 +70,7 @@ namespace ProgettoMonopoly
                     bool giaEntrato = false;
                     while (true)
                     {
-                        if (server.InLobby && giaEntrato)
+                        if (server.InLobby && !giaEntrato)
                         {
                             giaEntrato = true;
                             MessageBox.Show("Sei stato inserito nella partita, aspetta che tutti i giocatori si uniscano");
@@ -78,6 +95,40 @@ namespace ProgettoMonopoly
                 throw ex;
             }
 
+        }
+
+        private void btnPedinaPrima_Click(object sender, RoutedEventArgs e)
+        { 
+            for (int i = 0; i < listaPedine.Count; i++)
+            {
+                if(imgPedina.Source == listaPedine[i] && i != 0)
+                {
+                    imgPedina.Source = listaPedine[i - 1];
+                    break;
+                }
+                else if (imgPedina.Source == listaPedine[i] && i == 0)
+                {
+                    imgPedina.Source = listaPedine[listaPedine.Count - 1];
+                    break;
+                }
+            }
+        }
+
+        private void btnPedinaDopo_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < listaPedine.Count; i++)
+            {
+                if (imgPedina.Source == listaPedine[i] && i != listaPedine.Count -1)
+                {
+                    imgPedina.Source = listaPedine[i + 1];
+                    break;
+                }
+                else if(imgPedina.Source == listaPedine[i] && i == listaPedine.Count -1)
+                {
+                    imgPedina.Source = listaPedine[0];
+                    break;
+                }
+            }
         }
     }
 }

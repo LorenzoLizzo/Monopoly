@@ -145,5 +145,18 @@
     <Resource Include="Immagini\FacceDadi\faccia5.png" />
     <Resource Include="Immagini\FacceDadi\faccia6.png" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Immagini\Pedine\Cappello.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Immagini\Pedine\Scarpa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Immagini\Pedine\Ditale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Immagini\Pedine\Cariola.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

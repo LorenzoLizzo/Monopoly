@@ -62,7 +62,7 @@
   <Class Name="ProgettoMonopoly.Pedina">
     <Position X="2.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BACQKAEAAAAAAAAAgAAAAABDAAAAAAAQoAYAIAEAAAA=</HashCode>
+      <HashCode>BACQKAEAAAAAAAAAgAAAAABDAAAAAAAQoAQAIAEAAAA=</HashCode>
       <FileName>Pedina.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -89,7 +89,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="ProgettoMonopoly.Banca">
-    <Position X="10.75" Y="7" Width="1.5" />
+    <Position X="16.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAAIAAAAAAAIAAAAAgAAAAAoAAAAACAABA=</HashCode>
       <FileName>Banca.cs</FileName>
@@ -117,14 +117,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Prigione">
-    <Position X="13.25" Y="7" Width="1.5" />
+    <Position X="10.75" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAEAgCgAAAAAACAAABAAAAAAAAAAAAAAI=</HashCode>
       <FileName>Classi\Caselle\Prigione.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.InPrigione">
-    <Position X="15.5" Y="7" Width="1.5" />
+    <Position X="13" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classi\Caselle\InPrigione.cs</FileName>
@@ -161,7 +161,7 @@
   <Class Name="ProgettoMonopoly.MazzoProbabilita">
     <Position X="11" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAAAAAAIAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classi\Carte imprevisto e probabilita\MazzoProbabilita.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -171,7 +171,7 @@
   <Class Name="ProgettoMonopoly.MazzoImprevisti">
     <Position X="11" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
       <FileName>Classi\Carte imprevisto e probabilita\MazzoImprevisti.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -179,7 +179,7 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="ProgettoMonopoly.Gioco">
-    <Position X="19.5" Y="1.25" Width="1.5" />
+    <Position X="16.25" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACiIAAQCRAAAAQBAIAAAAiAgAAAAAAACEJAA=</HashCode>
       <FileName>Gioco.cs</FileName>
@@ -228,7 +228,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Server">
-    <Position X="16.25" Y="10.25" Width="1.5" />
+    <Position X="14.25" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAwAAgAAAAMIAQAACAiAEAAQBgAACQgAAAAAQAAAACA=</HashCode>
       <FileName>Server.cs</FileName>
