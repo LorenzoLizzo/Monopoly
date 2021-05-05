@@ -11,6 +11,7 @@ namespace ProgettoMonopoly
 {
     public class Server
     {
+        private Gioco _gioco;
         private const int _portaServer = 2021;
         private int _portaClient;
         private Socket _socket;
@@ -26,6 +27,18 @@ namespace ProgettoMonopoly
         {
             Socket = new Socket(SocketType.Dgram, ProtocolType.IP); //da sistemare per tcp
             EndPointLocale = new IPEndPoint(IPAddress.Any, 0);
+        }
+
+        public Gioco Gioco
+        {
+            get
+            {
+                return _gioco;
+            }
+            private set
+            {
+                _gioco = value;
+            }
         }
 
         public bool InLobby
@@ -170,7 +183,7 @@ namespace ProgettoMonopoly
                 //implementa
                 InLobby = false;
                 InGame = true;
-                Turni = DeterminaTurniECreaPedine(messaggioRicezione);
+                //Turni = DeterminaTurniECreaPedine(messaggioRicezione);
             }
             else if (messaggioRicezione.Contains("TURN"))
             {
@@ -184,9 +197,17 @@ namespace ProgettoMonopoly
             {
 
             }
+            else if (messaggioRicezione.Contains("DIED"))
+            {
+                if(messaggioRicezione.Split(' ')[1] == Gioco.TurnoAttuale.Pedina.Nome)
+                {
+                    
+                }
+            }
             //implementa
         }
 
+        /*
         private Queue<Turno> DeterminaTurniECreaPedine(string messaggioRicezione)
         {
             Queue<Turno> codaTurni = new Queue<Turno>();
@@ -200,6 +221,7 @@ namespace ProgettoMonopoly
             }
             return codaTurni;
         }
+        */
 
     }
 }

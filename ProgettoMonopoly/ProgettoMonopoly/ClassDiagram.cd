@@ -62,7 +62,7 @@
   <Class Name="ProgettoMonopoly.Pedina">
     <Position X="2.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BACQKAEAAAAAAAAAgAAAAABDAAAAAAAQoAQAIAEAAAA=</HashCode>
+      <HashCode>BACQKAECAAAAAAAAgAAAAABDAAAAAAAQoAUAIAEAAAA=</HashCode>
       <FileName>Pedina.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -181,7 +181,7 @@
   <Class Name="ProgettoMonopoly.Gioco">
     <Position X="16.25" Y="11" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAACiIAAQCRAAAAQBAIAAAAiAgAAAAAAACEJAA=</HashCode>
+      <HashCode>AAAAAAAAAiIAAQCRQAAAQBAIBAAAiAgAAAIAAgAEJAA=</HashCode>
       <FileName>Gioco.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -230,7 +230,7 @@
   <Class Name="ProgettoMonopoly.Server">
     <Position X="14.25" Y="11" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAwAAgAAAAMIAQAACAiAEAAQBgAACQgAAAAAQAAAACA=</HashCode>
+      <HashCode>CAwAAgAAAAMIAQAASAiAEAAQBgAACQgAAAAAQAAAASA=</HashCode>
       <FileName>Server.cs</FileName>
     </TypeIdentifier>
   </Class>
