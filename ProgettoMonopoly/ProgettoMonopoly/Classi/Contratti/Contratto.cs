@@ -8,10 +8,10 @@ namespace ProgettoMonopoly
     public abstract class Contratto
     {
         private string _nomeContratto;
-        private float _valoreContratto;
+        private int _valoreContratto;
         private List<int> _rendita;
 
-        public Contratto(string nomeContratto, float valoreContratto, List<int> rendita)
+        public Contratto(string nomeContratto, int valoreContratto, List<int> rendita)
         {
             NomeContratto = nomeContratto;
             ValoreContratto = valoreContratto;
@@ -42,7 +42,7 @@ namespace ProgettoMonopoly
             }
         }
 
-        public float ValoreContratto
+        public int ValoreContratto
         {
             get
             {
@@ -54,7 +54,7 @@ namespace ProgettoMonopoly
             }
         }
 
-        public float ValoreIpotecato
+        public int ValoreIpotecato
         {
             get
             {

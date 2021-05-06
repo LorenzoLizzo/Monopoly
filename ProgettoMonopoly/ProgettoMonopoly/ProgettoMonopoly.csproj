@@ -55,8 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Asta.cs" />
-    <Compile Include="Banca.cs" />
+    <Compile Include="Classi\Classi Inutilizzate\Asta.cs" />
+    <Compile Include="Classi\Classi Inutilizzate\Banca.cs" />
     <Compile Include="Classi\Contratti\Contratto.cs" />
     <Compile Include="Classi\Contratti\ContrattoImpresaPubblica.cs" />
     <Compile Include="Classi\Contratti\ContrattoStazione.cs" />
@@ -70,6 +70,9 @@
     <Compile Include="Classi\Caselle\InPrigione.cs" />
     <Compile Include="Classi\Carte imprevisto e probabilita\MazzoImprevisti.cs" />
     <Compile Include="Classi\Carte imprevisto e probabilita\MazzoProbabilita.cs" />
+    <Compile Include="Ipoteca.xaml.cs">
+      <DependentUpon>Ipoteca.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Parcheggio.cs" />
     <Compile Include="Pedina.cs" />
     <Compile Include="Classi\Caselle\Prigione.cs" />
@@ -82,6 +85,10 @@
     <Compile Include="Tassa.cs" />
     <Compile Include="Turno.cs" />
     <Page Include="FinestraDiGioco.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ipoteca.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

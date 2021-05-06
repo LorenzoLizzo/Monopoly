@@ -118,32 +118,25 @@ namespace ProgettoMonopoly
         {
             estratti = true;
             int sommaDadi = int.Parse(imgDado1.Source.ToString()[imgDado1.Source.ToString().Length - 5].ToString()) + int.Parse(imgDado2.Source.ToString()[imgDado2.Source.ToString().Length - 5].ToString());
-            string messaggio = $"MOVE {sommaDadi}";
-            server.InviaMessaggio(messaggio);
 
-            client.MuoviPedina(sommaDadi);
+            Casella casellaMovimento = client.MuoviPedina(sommaDadi);
 
-            if(client.TurnoAttuale.Pedina.Posizione is Proprieta && (client.TurnoAttuale.Pedina.Posizione as Proprieta).Comprata == false)
+            if (casellaMovimento is Proprieta && (casellaMovimento as Proprieta).Comprata == false)
             {
                 btnCompra.IsEnabled = true;
                 btnNonComprare.IsEnabled = true;
             }
-           
+
         }
 
         private void btnCompra_Click(object sender, RoutedEventArgs e)
         {
-            string messaggio = $"BUY {client.TurnoAttuale.Pedina.Posizione.Numerocasella}";
-            server.InviaMessaggio(messaggio);
-
             client.CompraProprieta();
-
         }
 
         private void btnNonComprare_Click(object sender, RoutedEventArgs e)
         {
-            string messaggio = $"NOBUY";
-            server.InviaMessaggio(messaggio);
+            client.RifiutaProprieta();
         }
 
         private void CambiaTurno()

@@ -92,13 +92,13 @@
     <Position X="16.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAAIAAAAAAAIAAAAAgAAAAAoAAAAACAABA=</HashCode>
-      <FileName>Banca.cs</FileName>
+      <FileName>Classi\Classi Inutilizzate\Banca.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Via">
     <Position X="4.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAACAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>Classi\Caselle\Via.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -181,7 +181,7 @@
   <Class Name="ProgettoMonopoly.Gioco">
     <Position X="16.25" Y="11" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAiIAAQCRQAAAQBAIBAAAiAgAAAIAAgAEJAA=</HashCode>
+      <HashCode>AAAAAAAAAgIAAQCRQAAAQBAABAAACAgAAAIAAgAAJAA=</HashCode>
       <FileName>Gioco.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -210,7 +210,7 @@
     <Position X="9" Y="13" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgEAAAAEAAABAAAAAAAABEAAAEACAAAAAIAAAAA=</HashCode>
-      <FileName>Asta.cs</FileName>
+      <FileName>Classi\Classi Inutilizzate\Asta.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProgettoMonopoly.Tassa">
