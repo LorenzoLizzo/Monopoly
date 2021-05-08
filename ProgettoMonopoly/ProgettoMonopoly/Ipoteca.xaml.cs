@@ -20,10 +20,10 @@ namespace ProgettoMonopoly
     public partial class Ipoteca : Window
     {
         Gioco gioco;
-        public Ipoteca(Gioco g ,Pedina pedina)
+        public Ipoteca(Gioco g)
         {
             InitializeComponent();
-            lstViewProprieta.ItemsSource = pedina.ListaProprieta;
+            lstViewProprieta.ItemsSource = g.TurnoAttuale.Pedina.ListaProprieta;
             gioco = g;
         }
 

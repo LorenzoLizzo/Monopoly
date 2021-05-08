@@ -7,7 +7,6 @@ namespace ProgettoMonopoly
 {
     public class Pedina : IEquatable<Pedina>
     {
-        private bool _pedinaSuQuestoClient;
         private string _nome;
         private string _percorsoImmagine;
         private List<Proprieta> _listaProprieta;
@@ -19,18 +18,6 @@ namespace ProgettoMonopoly
         public Pedina(string nome)
         {
             PedinaInPrigione = false;
-        }
-
-        public bool PedinaSuQuestoClient
-        {
-            get
-            {
-                return _pedinaSuQuestoClient;
-            }
-            private set
-            {
-                _pedinaSuQuestoClient = value;
-            }
         }
 
         public string Nome

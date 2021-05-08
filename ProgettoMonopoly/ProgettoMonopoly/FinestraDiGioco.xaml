@@ -39,8 +39,9 @@
         <Button x:Name="btnLanciaDadi" Content="Lancia dadi" FontSize="22" Grid.Column="5" Width="174" Height="70" Grid.Row="6" Grid.ColumnSpan="2" Click="btnLanciaDadi_Click"/>
         <Image x:Name="imgDado1" Height="141" VerticalAlignment="Top" Width="174" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Column="4" Grid.Row="4"/>
         <Image x:Name="imgDado2" Height="141" VerticalAlignment="Top" Width="174" Grid.ColumnSpan="2" Grid.Column="6" Grid.Row="4" Grid.RowSpan="2"/>
-        <Button x:Name="btnCompra" Content="Compra" Grid.Column="10" HorizontalAlignment="Left" Margin="150,10,-210,0" VerticalAlignment="Top" Width="200" Height="96" FontSize="24" Click="btnCompra_Click" IsEnabled="False"/>
-        <Button x:Name="btnNonComprare" Content="Non comprare" Grid.Column="10" HorizontalAlignment="Left" Margin="393,10,-453,0" VerticalAlignment="Top" Width="200" Height="96"  FontSize="24" Click="btnNonComprare_Click" IsEnabled="False"/>
+        <Button x:Name="btnCompra" Content="Compra" Grid.Column="10" HorizontalAlignment="Left" Margin="150,10,-210,0" VerticalAlignment="Top" Width="200" Height="51" FontSize="24" Click="btnCompra_Click" IsEnabled="False" Grid.Row="1"/>
+        <Button x:Name="btnNonComprare" Content="Non comprare" Grid.Column="10" HorizontalAlignment="Left" Margin="402,10,-447,0" VerticalAlignment="Top" Width="185" Height="51"  FontSize="24" Click="btnNonComprare_Click" IsEnabled="False" Grid.Row="1"/>
+        <Button x:Name="btnIpoteca" Content="Ipoteca" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Grid.Column="10" Margin="150,10,-210,0" Grid.Row="2" Height="51" FontSize="24" Click="btnIpoteca_Click"/>
 
     </Grid>
 </Window>

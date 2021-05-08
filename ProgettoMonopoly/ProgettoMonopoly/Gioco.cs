@@ -9,6 +9,7 @@ namespace ProgettoMonopoly
 {
     public class Gioco
     {
+        private Pedina _pedinaPrincipale;
         private Server _server;
         private Tabellone _tabellone;
         private List<Pedina> _listaPedine;
@@ -18,6 +19,18 @@ namespace ProgettoMonopoly
         public Gioco(Tabellone tabellone, Queue<Turno> listaTurni)
         {
             // Setup(listaTurni);
+        }
+
+        public Pedina PedinaPrincipale
+        {
+            get
+            {
+                return _pedinaPrincipale;
+            }
+            private set
+            {
+                _pedinaPrincipale = value;
+            }
         }
 
         public Server Server
@@ -92,33 +105,50 @@ namespace ProgettoMonopoly
 
         }
         */
-        public Casella MuoviPedina(int sommaDadi)
+        public Casella MuoviPedina(int sommaDadi, string nomeGiocatore)
         {
-            if (ListaPedine.Contains(TurnoAttuale.Pedina))
+            if (nomeGiocatore == PedinaPrincipale.Nome)
             {
-                if (!TurnoAttuale.Pedina.PedinaInPrigione)
+                if (ListaPedine.Contains(TurnoAttuale.Pedina))
                 {
-                    int posizioneAttualePedina = TurnoAttuale.Pedina.Posizione.Numerocasella;
-
-                    TurnoAttuale.Pedina.Posizione = Tabellone.GetCasella(posizioneAttualePedina + sommaDadi);
-
-                    if (TurnoAttuale.Pedina.Posizione.Numerocasella < posizioneAttualePedina)
+                    if (!TurnoAttuale.Pedina.PedinaInPrigione)
                     {
-                        TurnoAttuale.Pedina.DenaroPedina += (Tabellone.GetCasella(0) as Via).PassaggioDalVia;
+                        int posizioneAttualePedina = TurnoAttuale.Pedina.Posizione.Numerocasella;
+
+                        TurnoAttuale.Pedina.Posizione = Tabellone.GetCasella(posizioneAttualePedina + sommaDadi);
+
+                        if (TurnoAttuale.Pedina.Posizione.Numerocasella < posizioneAttualePedina)
+                        {
+                            TurnoAttuale.Pedina.DenaroPedina += (Tabellone.GetCasella(0) as Via).PassaggioDalVia;
+                        }
+
+                        string messaggio = $"MOVE {sommaDadi}";
+                        Server.InviaMessaggio(messaggio);
+
+                        return TurnoAttuale.Pedina.Posizione;
                     }
-
-                    string messaggio = $"MOVE {sommaDadi}";
-                    Server.InviaMessaggio(messaggio);
-
-                    return TurnoAttuale.Pedina.Posizione;
+                    else
+                    {
+                        return TurnoAttuale.Pedina.Posizione; //implementa prigione
+                    }
                 }
                 else
                 {
-                    return TurnoAttuale.Pedina.Posizione; //implementa prigione
+                    throw new Exception();
                 }
             }
             else
             {
+                foreach (Pedina pedina in ListaPedine)
+                {
+                    if (pedina.Nome == nomeGiocatore)
+                    {
+                        int posizioneAttualePedina = pedina.Posizione.Numerocasella;
+                        pedina.Posizione = Tabellone.GetCasella(posizioneAttualePedina + sommaDadi);
+
+                        return pedina.Posizione;
+                    }
+                }
                 throw new Exception();
             }
         }

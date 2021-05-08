@@ -95,7 +95,7 @@ namespace ProgettoMonopoly
             {
                 return _turni;
             }
-            private set
+            set
             {
                 _turni = value;
             }
@@ -195,7 +195,8 @@ namespace ProgettoMonopoly
             }
             else if (messaggioRicezione.Contains("ISMOVE"))
             {
-
+                Gioco.MuoviPedina(int.Parse(messaggioRicezione.Split(' ')[2]),  messaggioRicezione.Split(' ')[1]);
+                //implementa che se finisce su imprevisto o probabilità si vede a schermo la carta pescata.
             }
             else if (messaggioRicezione.Contains("DIED"))
             {

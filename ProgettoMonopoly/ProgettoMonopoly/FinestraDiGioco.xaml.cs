@@ -143,5 +143,11 @@ namespace ProgettoMonopoly
         {
 
         }
+
+        private void btnIpoteca_Click(object sender, RoutedEventArgs e)
+        {
+            Ipoteca ipoteca = new Ipoteca(client);
+            ipoteca.ShowDialog();
+        }
     }
 }
