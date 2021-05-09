@@ -43,5 +43,10 @@
         <Button x:Name="btnNonComprare" Content="Non comprare" Grid.Column="10" HorizontalAlignment="Left" Margin="402,10,-447,0" VerticalAlignment="Top" Width="185" Height="51"  FontSize="24" Click="btnNonComprare_Click" IsEnabled="False" Grid.Row="1"/>
         <Button x:Name="btnIpoteca" Content="Ipoteca" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Grid.Column="10" Margin="150,10,-210,0" Grid.Row="2" Height="51" FontSize="24" Click="btnIpoteca_Click"/>
 
+        <Image x:Name="imgP1" Grid.Column="10" HorizontalAlignment="Left" Height="50" Margin="33,35,0,0" Grid.Row="10" VerticalAlignment="Top" Width="66"/>
+        <Image x:Name="imgP2" Grid.Column="10" HorizontalAlignment="Left" Height="50" Margin="33,35,0,0" Grid.Row="10" VerticalAlignment="Top" Width="66"/>
+        <Image x:Name="imgP3" Grid.Column="10" HorizontalAlignment="Left" Height="50" Margin="33,35,0,0" Grid.Row="10" VerticalAlignment="Top" Width="66"/>
+        <Image x:Name="imgP4" Grid.Column="10" HorizontalAlignment="Left" Height="50" Margin="33,35,0,0" Grid.Row="10" VerticalAlignment="Top" Width="66"/>
+
     </Grid>
 </Window>

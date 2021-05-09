@@ -11,20 +11,8 @@ namespace ProgettoMonopoly
     public class Tabellone
     {
         private List <Casella> _listaCaselle;
-        private ObservableCollection<Pedina> _listaPedine;
         private MazzoImprevisti _mazzoImprevisti;
         private MazzoProbabilita _mazzoProbabilita;
-        private Dictionary<int, int> _listaBanconote; //chiave tipo banconata es:500 valore numero di quelle banconote es:2
-
-        public Tabellone(List<Casella> listaCaselle, ObservableCollection<Pedina> listaPedine, MazzoImprevisti mazzoImprevisti,
-            MazzoProbabilita mazzoProbabilita, Dictionary<int, int> listaBanconote)
-        {
-            ListaCaselle = listaCaselle;
-            ListaPedine = listaPedine;
-            MazzoImprevisti = mazzoImprevisti;
-            MazzoProbabilita = mazzoProbabilita;
-            ListaBanconote = listaBanconote;
-        }
 
         public Tabellone()
         {
@@ -41,18 +29,6 @@ namespace ProgettoMonopoly
             set
             {
                 _listaCaselle = value;
-            }
-        }
-
-        private ObservableCollection<Pedina> ListaPedine
-        {
-            get
-            {
-                return _listaPedine;
-            }
-            set
-            {
-                _listaPedine = value;
             }
         }
 
@@ -77,18 +53,6 @@ namespace ProgettoMonopoly
             private set
             {
                 _mazzoProbabilita = value;
-            }
-        }
-
-        private Dictionary<int, int> ListaBanconote
-        {
-            get
-            {
-                return _listaBanconote;
-            }
-            set
-            {
-                _listaBanconote = value;
             }
         }
 

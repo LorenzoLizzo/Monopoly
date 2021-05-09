@@ -20,9 +20,7 @@ namespace ProgettoMonopoly
     /// </summary>
     public partial class FinestraDiGioco : Window
     {
-        Server server;
         Gioco client;
-        Tabellone tabellone;
 
         readonly Uri uriFaccia1 = new Uri(@"\Immagini\FacceDadi\faccia1.png", UriKind.Relative);
         readonly Uri uriFaccia2 = new Uri(@"\Immagini\FacceDadi\faccia2.png", UriKind.Relative);
@@ -36,21 +34,18 @@ namespace ProgettoMonopoly
         int dado2;
         bool estratti = false;
 
-        public FinestraDiGioco(Server server, Tabellone tabellone)
+        public FinestraDiGioco(Gioco client)
         {
             InitializeComponent();
+            this.client = client;
             SorteggioDadi();
-            this.server = server;
-            client = new Gioco(tabellone, server.Turni);
         }
 
         public FinestraDiGioco()
         {
             InitializeComponent();
+            client = new Gioco(new Tabellone(), new Server());
             SorteggioDadi();
-            server = new Server();
-            tabellone = new Tabellone();
-            client = new Gioco(tabellone, server.Turni);
         }
 
         private async void SorteggioDadi()
@@ -119,7 +114,7 @@ namespace ProgettoMonopoly
             estratti = true;
             int sommaDadi = int.Parse(imgDado1.Source.ToString()[imgDado1.Source.ToString().Length - 5].ToString()) + int.Parse(imgDado2.Source.ToString()[imgDado2.Source.ToString().Length - 5].ToString());
 
-            Casella casellaMovimento = client.MuoviPedina(sommaDadi);
+            Casella casellaMovimento = client.MuoviPedina(sommaDadi, client.PedinaPrincipale.Nome);
 
             if (casellaMovimento is Proprieta && (casellaMovimento as Proprieta).Comprata == false)
             {

@@ -32,3 +32,5 @@ C:\Users\lorenzo.lizzo\Desktop\Monopoly\ProgettoMonopoly\ProgettoMonopoly\obj\De
 C:\Users\lorenzo.lizzo\Desktop\Monopoly\ProgettoMonopoly\ProgettoMonopoly\obj\Debug\ProgettoMonopoly.csproj.CoreCompileInputs.cache
 C:\Users\lorenzo.lizzo\Desktop\Monopoly\ProgettoMonopoly\ProgettoMonopoly\obj\Debug\ProgettoMonopoly.exe
 C:\Users\lorenzo.lizzo\Desktop\Monopoly\ProgettoMonopoly\ProgettoMonopoly\obj\Debug\ProgettoMonopoly.pdb
+C:\Users\Lorenzo\Desktop\Monopoly\ProgettoMonopoly\ProgettoMonopoly\obj\Debug\Ipoteca.g.cs
+C:\Users\Lorenzo\Desktop\Monopoly\ProgettoMonopoly\ProgettoMonopoly\obj\Debug\Ipoteca.baml

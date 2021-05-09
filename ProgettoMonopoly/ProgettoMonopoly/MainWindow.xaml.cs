@@ -29,12 +29,12 @@ namespace ProgettoMonopoly
         Uri uriCariola = new Uri(@"\Immagini\Pedine\Cariola.png", UriKind.Relative);
         Uri uriDitale = new Uri(@"\Immagini\Pedine\Ditale.png", UriKind.Relative);
 
-        Server server;
+        Gioco client;
         public MainWindow()
         {
             InitializeComponent();
             CaricamentoPedine();
-            server = new Server();
+            client = new Gioco(new Tabellone(), new Server());
         }
 
         private void CaricamentoPedine()
@@ -51,8 +51,7 @@ namespace ProgettoMonopoly
         {
             try
             {
-                string richiestaGioco = $"INSERT {txtBoxNome.Text}";
-                server.InviaMessaggio(richiestaGioco);
+                client.EntraInLobby(txtBoxNome.Text);
                 ControlloStatoPartita();
             }
             catch(Exception ex)
@@ -70,20 +69,20 @@ namespace ProgettoMonopoly
                     bool giaEntrato = false;
                     while (true)
                     {
-                        if (server.InLobby && !giaEntrato)
+                        if (client.InLobby && !giaEntrato)
                         {
                             giaEntrato = true;
                             MessageBox.Show("Sei stato inserito nella partita, aspetta che tutti i giocatori si uniscano");
                         }
-                        else if (server.InGame)
+                        else if (client.InGame)
                         {
-                            FinestraDiGioco finestraDiGioco = new FinestraDiGioco(server, new Tabellone());
+                            FinestraDiGioco finestraDiGioco = new FinestraDiGioco(client);
                             finestraDiGioco.Show();
                             this.Close();
                         }
-                        else if (server.Errore != null)
+                        else if (client.Errore != null)
                         {
-                            MessageBox.Show(server.Errore);
+                            MessageBox.Show(client.Errore);
                         }
                         Thread.Sleep(1);
                     }

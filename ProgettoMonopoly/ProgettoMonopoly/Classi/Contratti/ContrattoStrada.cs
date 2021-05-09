@@ -10,7 +10,7 @@ namespace ProgettoMonopoly
         private string _colore; //togli???
         private int _costoPerCasa;
         
-        public ContrattoStrada(string nomeContratto, float valoreContratto, List<int> rendita, string colore): base(nomeContratto, valoreContratto, rendita)
+        public ContrattoStrada(string nomeContratto, int valoreContratto, List<int> rendita, string colore): base(nomeContratto, valoreContratto, rendita)
         {
             
         }

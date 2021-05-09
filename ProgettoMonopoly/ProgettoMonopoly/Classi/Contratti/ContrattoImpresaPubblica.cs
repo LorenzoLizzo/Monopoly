@@ -7,7 +7,7 @@ namespace ProgettoMonopoly
 {
     public class ContrattoImpresaPubblica : Contratto
     {
-        public ContrattoImpresaPubblica(string nomeContratto, float valoreContratto, List<int> rendita) : base(nomeContratto, valoreContratto, rendita)
+        public ContrattoImpresaPubblica(string nomeContratto, int valoreContratto, List<int> rendita) : base(nomeContratto, valoreContratto, rendita)
         {
 
         }

@@ -21,6 +21,36 @@ namespace ProgettoMonopoly
             // Setup(listaTurni);
         }
 
+        public Gioco(Tabellone tabellone, Server server)
+        {
+            Tabellone = tabellone;
+            Server = server;
+        }
+
+        public bool InLobby
+        {
+            get
+            {
+                return Server.InLobby;
+            }
+        }
+
+        public bool InGame
+        {
+            get
+            {
+                return Server.InGame;
+            }
+        }
+
+        public string Errore
+        {
+            get
+            {
+                return Server.Errore;
+            }
+        }
+
         public Pedina PedinaPrincipale
         {
             get
@@ -33,13 +63,13 @@ namespace ProgettoMonopoly
             }
         }
 
-        public Server Server
+        private Server Server
         {
             get
             {
                 return _server;
             }
-            private set
+            set
             {
                 _server = value;
             }
@@ -91,6 +121,12 @@ namespace ProgettoMonopoly
             {
                 _listaTurni = value;
             }
+        }
+
+        public void EntraInLobby(string nomeGiocatore)
+        {
+            string richiestaGioco = $"INSERT {nomeGiocatore}";
+            Server.InviaMessaggio(richiestaGioco);
         }
 
         /* setup partita 
@@ -174,6 +210,11 @@ namespace ProgettoMonopoly
         {
             string messaggio = $"NOBUY";
             Server.InviaMessaggio(messaggio);
+        }
+
+        public void Fallisci(string nomeGiocatore)
+        {
+            
         }
 
         /* rifiuta proprieta e apri asta
@@ -261,6 +302,8 @@ namespace ProgettoMonopoly
             ListaTurni.Enqueue(TurnoAttuale);
             ListaTurni.Dequeue();
         }
+
+        
         
        
     }

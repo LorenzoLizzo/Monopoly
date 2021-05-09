@@ -11,7 +11,6 @@ namespace ProgettoMonopoly
 {
     public class Server
     {
-        private Gioco _gioco;
         private const int _portaServer = 2021;
         private int _portaClient;
         private Socket _socket;
@@ -27,18 +26,8 @@ namespace ProgettoMonopoly
         {
             Socket = new Socket(SocketType.Dgram, ProtocolType.IP); //da sistemare per tcp
             EndPointLocale = new IPEndPoint(IPAddress.Any, 0);
-        }
 
-        public Gioco Gioco
-        {
-            get
-            {
-                return _gioco;
-            }
-            private set
-            {
-                _gioco = value;
-            }
+            RicezioneMessaggi();
         }
 
         public bool InLobby
@@ -195,15 +184,17 @@ namespace ProgettoMonopoly
             }
             else if (messaggioRicezione.Contains("ISMOVE"))
             {
-                Gioco.MuoviPedina(int.Parse(messaggioRicezione.Split(' ')[2]),  messaggioRicezione.Split(' ')[1]);
+               // Gioco.MuoviPedina(int.Parse(messaggioRicezione.Split(' ')[2]),  messaggioRicezione.Split(' ')[1]);
                 //implementa che se finisce su imprevisto o probabilità si vede a schermo la carta pescata.
             }
             else if (messaggioRicezione.Contains("DIED"))
             {
+                /*
                 if(messaggioRicezione.Split(' ')[1] == Gioco.TurnoAttuale.Pedina.Nome)
                 {
                     
                 }
+                */
             }
             //implementa
         }
