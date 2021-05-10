@@ -83,7 +83,7 @@
     <Compile Include="Tabellone.cs" />
     <Compile Include="Classi\Caselle\Via.cs" />
     <Compile Include="Tassa.cs" />
-    <Compile Include="Turno.cs" />
+    <Compile Include="Classi\Classi Inutilizzate\Turno.cs" />
     <Page Include="FinestraDiGioco.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

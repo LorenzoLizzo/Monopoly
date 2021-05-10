@@ -15,8 +15,10 @@ namespace ProgettoMonopoly
         private float _denaroPedina;
         private List<Proprieta> _listaProprietaIpotecate;
 
-        public Pedina(string nome)
+        public Pedina(string nome, string percorsoImmagine)
         {
+            Nome = nome;
+            PercorsoImmagine = percorsoImmagine;
             PedinaInPrigione = false;
         }
 
@@ -26,7 +28,7 @@ namespace ProgettoMonopoly
             {
                 return _nome;
             }
-            set
+            private set
             {
                 _nome = value;
             }
@@ -38,7 +40,7 @@ namespace ProgettoMonopoly
             {
                 return _percorsoImmagine;
             }
-            set
+            private set
             {
                 _percorsoImmagine = value;
             }

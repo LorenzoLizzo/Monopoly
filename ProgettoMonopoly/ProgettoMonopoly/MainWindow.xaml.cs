@@ -52,6 +52,7 @@ namespace ProgettoMonopoly
             try
             {
                 client.EntraInLobby(txtBoxNome.Text);
+                client.PedinaPrincipale = new Pedina(txtBoxNome.Text, imgPedina.Source.ToString());
                 ControlloStatoPartita();
             }
             catch(Exception ex)
@@ -60,7 +61,7 @@ namespace ProgettoMonopoly
             }
         }
 
-        public async void ControlloStatoPartita()
+        private async void ControlloStatoPartita()
         {
             try
             {

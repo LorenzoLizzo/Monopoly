@@ -33,12 +33,13 @@ namespace ProgettoMonopoly
         int dado1;
         int dado2;
         bool estratti = false;
+        bool interfacciaAttivata = false;
 
         public FinestraDiGioco(Gioco client)
         {
             InitializeComponent();
             this.client = client;
-            SorteggioDadi();
+            ControllaTurno();
         }
 
         public FinestraDiGioco()
@@ -46,6 +47,41 @@ namespace ProgettoMonopoly
             InitializeComponent();
             client = new Gioco(new Tabellone(), new Server());
             SorteggioDadi();
+        }
+
+        private void AttivaDisattivaInterfaccia(bool attiva)
+        {
+            btnCompra.IsEnabled = false;
+            btnNonComprare.IsEnabled = false;
+
+            if (!interfacciaAttivata && attiva)
+            {
+                estratti = false;
+                SorteggioDadi();
+                btnIpoteca.IsEnabled = true;
+                interfacciaAttivata = true;
+            }
+            else if(interfacciaAttivata && !attiva)
+            {
+                estratti = true;
+                btnIpoteca.IsEnabled = false;
+                interfacciaAttivata = false;
+            }
+        }
+
+        private async void ControllaTurno()
+        {
+            await Task.Run(() =>
+            {
+                while (true)
+                {
+                    if (client.TurnoPedinaPrincipale && !interfacciaAttivata)
+                    {
+                        AttivaDisattivaInterfaccia(true);
+                    }
+                    Thread.Sleep(1);
+                }
+            });
         }
 
         private async void SorteggioDadi()
@@ -132,11 +168,6 @@ namespace ProgettoMonopoly
         private void btnNonComprare_Click(object sender, RoutedEventArgs e)
         {
             client.RifiutaProprieta();
-        }
-
-        private void CambiaTurno()
-        {
-
         }
 
         private void btnIpoteca_Click(object sender, RoutedEventArgs e)

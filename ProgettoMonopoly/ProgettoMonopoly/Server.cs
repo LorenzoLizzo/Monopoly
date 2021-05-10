@@ -20,7 +20,7 @@ namespace ProgettoMonopoly
         private bool _inGame;
         private string _errore;
         private int _numeroCartaAssegnato;
-        private Queue<Turno> _turni;
+        private bool _turnoPedinaPrincipale;
 
         public Server()
         {
@@ -66,18 +66,31 @@ namespace ProgettoMonopoly
             }
         }
 
-        private int NumeroCartaAssegnato
+        public int NumeroCartaAssegnato
         {
             get
             {
                 return _numeroCartaAssegnato;
             }
-            set
+            private set
             {
                 _numeroCartaAssegnato = value;
             }
         }
 
+        public bool TurnoPedinaPrincipale
+        {
+            get
+            {
+                return _turnoPedinaPrincipale;
+            }
+            private set
+            {
+                _turnoPedinaPrincipale = value;
+            }
+        }
+
+        /*
         public Queue<Turno> Turni
         {
             get
@@ -89,6 +102,7 @@ namespace ProgettoMonopoly
                 _turni = value;
             }
         }
+        */
 
         private int PortaClient
         {
@@ -102,7 +116,7 @@ namespace ProgettoMonopoly
             }
         }
 
-        public Socket Socket
+        private Socket Socket
         {
             get
             {
@@ -114,7 +128,7 @@ namespace ProgettoMonopoly
             }
         }
 
-        public EndPoint EndPointLocale
+        private EndPoint EndPointLocale
         {
             get
             {
@@ -165,11 +179,9 @@ namespace ProgettoMonopoly
             {
                 PortaClient = int.Parse(messaggioRicezione.Split(' ')[1]);
                 InLobby = true;
-                
             }
             else if (messaggioRicezione.Contains("STARTGAME"))
             {
-                //implementa
                 InLobby = false;
                 InGame = true;
                 //Turni = DeterminaTurniECreaPedine(messaggioRicezione);
@@ -177,6 +189,7 @@ namespace ProgettoMonopoly
             else if (messaggioRicezione.Contains("TURN"))
             {
                 NumeroCartaAssegnato = int.Parse(messaggioRicezione.Split(' ')[1]);
+                TurnoPedinaPrincipale = true;
             }
             else if (messaggioRicezione.Contains("BANK"))
             {
@@ -199,8 +212,8 @@ namespace ProgettoMonopoly
             //implementa
         }
 
-        /*
-        private Queue<Turno> DeterminaTurniECreaPedine(string messaggioRicezione)
+        /* TODO CREZIONE PEDINE NON DEL CLIENT
+        private Queue<Turno> CreaPedine(string messaggioRicezione)
         {
             Queue<Turno> codaTurni = new Queue<Turno>();
 
@@ -215,5 +228,40 @@ namespace ProgettoMonopoly
         }
         */
 
+        public void EntraInPartita(string nomeGiocatore)
+        {
+            string richiestaGioco = $"INSERT {nomeGiocatore}";
+            InviaMessaggio(richiestaGioco);
+        }
+
+        public void MuoviPedina(int sommaDadi)
+        {
+            string messaggio = $"MOVE {sommaDadi}";
+            InviaMessaggio(messaggio);
+        }
+
+        public void CompraProprieta(int proprietaComprata)
+        {
+            string messaggio = $"BUY {proprietaComprata}";
+            InviaMessaggio(messaggio);
+        }
+
+        public void RifiutaProprieta()
+        {
+            string messaggio = $"NOBUY";
+            InviaMessaggio(messaggio);
+        }
+
+        public void IpotecaProprieta(int proprietaIpotecata)
+        {
+            string messaggio = $"IPOTECA {proprietaIpotecata}";
+            InviaMessaggio(messaggio);
+        }
+
+        public void NonIpotecare()
+        {
+            string messaggio = $"NOIPOTECA";
+            InviaMessaggio(messaggio);
+        }
     }
 }

@@ -27,6 +27,14 @@ namespace ProgettoMonopoly
             Server = server;
         }
 
+        public bool TurnoPedinaPrincipale
+        {
+            get
+            {
+                return Server.TurnoPedinaPrincipale;
+            }
+        }
+
         public bool InLobby
         {
             get
@@ -57,7 +65,7 @@ namespace ProgettoMonopoly
             {
                 return _pedinaPrincipale;
             }
-            private set
+            set
             {
                 _pedinaPrincipale = value;
             }
@@ -99,34 +107,9 @@ namespace ProgettoMonopoly
             }
         }
 
-        public Turno TurnoAttuale
-        {
-            get
-            {
-                return ListaTurni.Peek();
-            }
-            set
-            {
-                _turnoAttuale = value;
-            }
-        }
-
-        public Queue<Turno> ListaTurni
-        {
-            get
-            {
-                return _listaTurni;
-            }
-            set
-            {
-                _listaTurni = value;
-            }
-        }
-
         public void EntraInLobby(string nomeGiocatore)
         {
-            string richiestaGioco = $"INSERT {nomeGiocatore}";
-            Server.InviaMessaggio(richiestaGioco);
+            Server.EntraInPartita(nomeGiocatore);
         }
 
         /* setup partita 
@@ -145,27 +128,26 @@ namespace ProgettoMonopoly
         {
             if (nomeGiocatore == PedinaPrincipale.Nome)
             {
-                if (ListaPedine.Contains(TurnoAttuale.Pedina))
+                if (ListaPedine.Contains(PedinaPrincipale))
                 {
-                    if (!TurnoAttuale.Pedina.PedinaInPrigione)
+                    if (!PedinaPrincipale.PedinaInPrigione)
                     {
-                        int posizioneAttualePedina = TurnoAttuale.Pedina.Posizione.Numerocasella;
+                        int posizioneAttualePedina = PedinaPrincipale.Posizione.Numerocasella;
 
-                        TurnoAttuale.Pedina.Posizione = Tabellone.GetCasella(posizioneAttualePedina + sommaDadi);
+                        PedinaPrincipale.Posizione = Tabellone.GetCasella(posizioneAttualePedina + sommaDadi);
 
-                        if (TurnoAttuale.Pedina.Posizione.Numerocasella < posizioneAttualePedina)
+                        if (PedinaPrincipale.Posizione.Numerocasella < posizioneAttualePedina)
                         {
-                            TurnoAttuale.Pedina.DenaroPedina += (Tabellone.GetCasella(0) as Via).PassaggioDalVia;
+                            PedinaPrincipale.DenaroPedina += (Tabellone.GetCasella(0) as Via).PassaggioDalVia;
                         }
 
-                        string messaggio = $"MOVE {sommaDadi}";
-                        Server.InviaMessaggio(messaggio);
+                        Server.MuoviPedina(sommaDadi);
 
-                        return TurnoAttuale.Pedina.Posizione;
+                        return PedinaPrincipale.Posizione;
                     }
                     else
                     {
-                        return TurnoAttuale.Pedina.Posizione; //implementa prigione
+                        return PedinaPrincipale.Posizione; //implementa prigione
                     }
                 }
                 else
@@ -191,14 +173,12 @@ namespace ProgettoMonopoly
 
         public void CompraProprieta()
         {
-            if (TurnoAttuale.Pedina.Posizione is Proprieta && (TurnoAttuale.Pedina.Posizione as Proprieta).Comprata == false)
+            if (PedinaPrincipale.Posizione is Proprieta && (PedinaPrincipale.Posizione as Proprieta).Comprata == false)
             {
-                TurnoAttuale.Pedina.DenaroPedina -= (TurnoAttuale.Pedina.Posizione as Proprieta).Contratto.ValoreContratto;
-                TurnoAttuale.Pedina.ListaProprieta.Add(TurnoAttuale.Pedina.Posizione as Proprieta);
+                PedinaPrincipale.DenaroPedina -= (PedinaPrincipale.Posizione as Proprieta).Contratto.ValoreContratto;
+                PedinaPrincipale.ListaProprieta.Add(PedinaPrincipale.Posizione as Proprieta);
 
-                string messaggio = $"BUY {TurnoAttuale.Pedina.Posizione.Numerocasella}";
-
-                Server.InviaMessaggio(messaggio);
+                Server.CompraProprieta(PedinaPrincipale.Posizione.Numerocasella);
             }
             else
             {
@@ -208,8 +188,7 @@ namespace ProgettoMonopoly
 
         public void RifiutaProprieta()
         {
-            string messaggio = $"NOBUY";
-            Server.InviaMessaggio(messaggio);
+            Server.RifiutaProprieta();
         }
 
         public void Fallisci(string nomeGiocatore)
@@ -226,9 +205,9 @@ namespace ProgettoMonopoly
         */
         public void PagaAffitto()
         {
-            int affitto = (TurnoAttuale.Pedina.Posizione as Proprieta).Contratto.Rendita[(TurnoAttuale.Pedina.Posizione as Proprieta).LivelloProprieta];
-            TurnoAttuale.Pedina.DenaroPedina -= affitto;
-            (TurnoAttuale.Pedina.Posizione as Proprieta).Proprietario.DenaroPedina += affitto;
+            int affitto = (PedinaPrincipale.Posizione as Proprieta).Contratto.Rendita[(PedinaPrincipale.Posizione as Proprieta).LivelloProprieta];
+            PedinaPrincipale.DenaroPedina -= affitto;
+            (PedinaPrincipale.Posizione as Proprieta).Proprietario.DenaroPedina += affitto;
         }
 
         /* TODO da fare che si miglira la proprietà solo nel proprio turno
@@ -284,23 +263,15 @@ namespace ProgettoMonopoly
             //chiamato quando si sceglie di ipotecare
             foreach (Proprieta item in proprieta)
             {
-                TurnoAttuale.Pedina.ListaProprieta.Remove(item);
-                TurnoAttuale.Pedina.DenaroPedina += item.Contratto.ValoreIpotecato;
-                string messaggio = $"IPOTECA {item.Numerocasella}";
-                Server.InviaMessaggio(messaggio);
+                PedinaPrincipale.ListaProprieta.Remove(item);
+                PedinaPrincipale.DenaroPedina += item.Contratto.ValoreIpotecato;
+                Server.IpotecaProprieta(item.Numerocasella);
             } 
         }
 
         public void NonIpoteca()
         {
-            string messaggio = $"NOIPOTECA";
-            Server.InviaMessaggio(messaggio);
-        }
-
-        public void CambiaTurno()
-        {
-            ListaTurni.Enqueue(TurnoAttuale);
-            ListaTurni.Dequeue();
+            Server.NonIpotecare();
         }
 
         
